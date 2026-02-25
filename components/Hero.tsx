@@ -40,6 +40,8 @@ const Hero: React.FC = () => {
     }
   };
 
+  const resumeHref = `${import.meta.env.BASE_URL}Tao_Jin_Resume.pdf`;
+
   return (
     <section className="relative h-screen bg-slate-900 flex items-center justify-center overflow-hidden">
       {/* Background Decor - z-0 */}
@@ -76,12 +78,9 @@ const Hero: React.FC = () => {
             View Projects
           </button>
           
-          {/* TODO: Ensure 'Tao_Jin_Resume.pdf' is placed in the public/ root directory of the project */}
           <a 
-            href="/Tao_Jin_Resume.pdf" 
+            href={resumeHref}
             download="Tao_Jin_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
             className="px-8 py-3 bg-transparent border border-slate-600 text-slate-300 rounded-full font-semibold hover:bg-slate-800 hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer relative z-30"
           >
             <Download size={18} />
