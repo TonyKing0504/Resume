@@ -22,13 +22,14 @@ export const EXPERIENCE_DATA: Job[] = [
   {
     id: 'grow-investment',
     company: 'Grow Investment Group',
-    role: 'Institutional Sales Dept Intern',
+    role: 'Institutional Sales Department Intern',
     location: 'Shanghai, China',
     period: 'May 2024 – Aug 2024',
     achievements: [
-      'Engineered Python-based API tools to automate data entry, improving workflow efficiency for due diligence processes.',
-      'Reduced asset selloffs by 9% by compiling strategic slide decks analyzing macroeconomic indicators (rates, sentiment).',
-      'Boosted conversion rates by 12% and inquiries by 4% through the design of technical marketing materials for convertible bond products.'
+      'Spearheaded in-depth market research to identify investment trends and presented strategic findings to senior analysts, directly supporting institutional client decision-making.',
+      'Collaborated with cross-functional teams to conduct due diligence and engineered Python-based API tools to automate data entry from cross-referenced databases, improving workflow efficiency.',
+      'Compiled a comprehensive slide deck analyzing the convertible bond market downturn through macroeconomic indicators such as rates and sentiment, helping reduce selloffs by 9%.',
+      'Designed technical marketing materials for a new convertible bond product launch and educated sales teams on key features, contributing to a 4% increase in inquiries and a 12% boost in conversion rates.'
     ]
   },
   {
@@ -38,9 +39,10 @@ export const EXPERIENCE_DATA: Job[] = [
     location: 'Shanghai, China',
     period: 'June 2023 – Aug 2023',
     achievements: [
-      'Streamlined reporting processes and enhanced operational efficiency by 8% through the refinement of data collection methodologies.',
-      'Analyzed portfolio performance using Sharpe, Sortino, and Beta metrics, visualizing trends against benchmarks for corporate clients.',
-      'Rectified critical financial discrepancies during pre-IPO due diligence for clients with market caps >$7.7M USD.'
+      'Advised corporate clients with market caps up to $7.7M USD during pre-IPO stages by performing financial due diligence, analyzing cash flow statements, and rectifying critical discrepancies.',
+      'Refined data collection methodologies for senior analysts, streamlining reporting processes and enhancing operational efficiency by 8%.',
+      'Analyzed portfolio performance by calculating key metrics including Sharpe, Sortino, Beta, and Volatility, then visualized trends against benchmarks with time-series plots.',
+      'Performed systematic risk evaluation and correlation analysis, presenting findings in comprehensive risk management reports to stakeholders.'
     ]
   }
 ];
