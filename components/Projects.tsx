@@ -1,8 +1,19 @@
 import React from 'react';
-import { ExternalLink, Code, Database, TrendingUp } from 'lucide-react';
+import { Activity, Calendar, Database, TrendingUp } from 'lucide-react';
 import { PROJECTS_DATA } from '../constants';
 
 const Projects: React.FC = () => {
+  const getProjectIcon = (projectId: string) => {
+    switch (projectId) {
+      case 'diabetes-readmission':
+        return <Activity size={24} />;
+      case 'food-delivery':
+        return <Database size={24} />;
+      default:
+        return <TrendingUp size={24} />;
+    }
+  };
+
   return (
     <section id="projects" className="py-20 bg-slate-900 text-white scroll-mt-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,9 +29,14 @@ const Projects: React.FC = () => {
             <div key={project.id} className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-750 transition-colors border border-slate-700 hover:border-blue-500 group">
               <div className="flex justify-between items-start mb-6">
                 <div className="bg-blue-900/30 p-3 rounded-lg text-blue-400">
-                  {project.id === 'food-delivery' ? <Database size={24} /> : <TrendingUp size={24} />}
+                  {getProjectIcon(project.id)}
                 </div>
-                {/* <ExternalLink className="text-slate-500 hover:text-white cursor-pointer" size={20} /> */}
+                {project.period && (
+                  <div className="flex items-center gap-2 text-xs font-medium text-slate-400">
+                    <Calendar size={14} />
+                    <span>{project.period}</span>
+                  </div>
+                )}
               </div>
 
               <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">{project.title}</h3>

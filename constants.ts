@@ -49,6 +49,19 @@ export const EXPERIENCE_DATA: Job[] = [
 
 export const PROJECTS_DATA: Project[] = [
   {
+    id: 'diabetes-readmission',
+    title: 'Diabetes Hospital Readmission Risk Modeling',
+    role: 'Machine Learning & Clinical Risk Modeling',
+    period: 'Sep. 2025 – Present',
+    tech: ['Python', 'pandas', 'scikit-learn', 'XGBoost', 'SHAP'],
+    description: 'Built a leakage-safe clinical risk modeling pipeline for 30-day diabetes readmission prediction using hospital encounter, diagnosis, medication, and utilization data across a large multi-site U.S. cohort.',
+    metrics: [
+      'Engineered a 160-feature dataset from 101,766 hospital encounters across 130 U.S. hospitals for 71,518 unique patients, using patient-level 70/10/20 train-calibrate-test splitting to prevent data leakage.',
+      'Benchmarked logistic regression, random forest, gradient boosting, and XGBoost for 30-day readmission prediction, with best held-out performance reaching AUROC 0.668 and AUPRC 0.230.',
+      'Applied isotonic recalibration to reduce XGBoost Expected Calibration Error from 0.342 to 0.004, implemented split conformal prediction with 90.1% empirical coverage, and ran SHAP interpretability plus subgroup fairness audits.'
+    ]
+  },
+  {
     id: 'food-delivery',
     title: 'Dual-Portal Food Delivery System',
     role: 'Full Stack Engineer & DB Architect',

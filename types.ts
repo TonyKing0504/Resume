@@ -2,6 +2,7 @@ export interface Project {
   id: string;
   title: string;
   role: string;
+  period?: string;
   tech: string[];
   description: string;
   metrics: string[];
