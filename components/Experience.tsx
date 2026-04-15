@@ -1,52 +1,68 @@
-import React from 'react';
-import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import React, { useRef } from 'react';
+import { MapPin } from 'lucide-react';
 import { EXPERIENCE_DATA } from '../constants';
+import { useInView } from '../hooks/useInView';
 
 const Experience: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { threshold: 0.1, once: true });
+
   return (
-    <section id="experience" className="py-20 bg-white scroll-mt-28">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+    <section
+      ref={sectionRef}
+      id="experience"
+      className={`py-24 md:py-32 bg-page scroll-mt-28 fade-up ${inView ? 'in-view' : ''}`}
+    >
+      <div className="max-w-content mx-auto px-6 lg:px-8">
+        <div className="mb-16 max-w-2xl">
+          <p className="eyebrow mb-4">Experience</p>
+          <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.08] tracking-tighter text-ink mb-4">
             Professional Experience
           </h2>
-          <p className="text-slate-600">
+          <p className="text-body text-ink-secondary">
             Delivering impact in Investment Banking and Institutional Sales.
           </p>
         </div>
 
-        <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
-          {EXPERIENCE_DATA.map((job, index) => (
-            <div key={job.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              
-              {/* Timeline Icon */}
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-blue-600">
-                <Briefcase size={18} />
+        <div className="divide-y divide-hairline/70">
+          {EXPERIENCE_DATA.map((job) => (
+            <article
+              key={job.id}
+              className="grid md:grid-cols-[10rem_1fr] gap-4 md:gap-8 py-10 md:py-12 first:pt-0 last:pb-0"
+            >
+              {/* Date column */}
+              <div className="md:pt-1">
+                <p className="eyebrow md:whitespace-nowrap">{job.period}</p>
+                <p className="mt-2 flex items-center gap-1 text-[13px] text-ink-tertiary">
+                  <MapPin size={12} strokeWidth={2} />
+                  {job.location}
+                </p>
               </div>
 
-              {/* Content Card */}
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
-                  <div>
-                    <h3 className="font-bold text-lg text-slate-900">{job.role}</h3>
-                    <h4 className="text-blue-600 font-medium">{job.company}</h4>
-                  </div>
-                  <div className="mt-2 sm:mt-0 text-xs text-slate-500 flex flex-col items-start sm:items-end">
-                    <span className="flex items-center gap-1"><Calendar size={12} /> {job.period}</span>
-                    <span className="flex items-center gap-1"><MapPin size={12} /> {job.location}</span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-2">
+              {/* Content column */}
+              <div>
+                <h3 className="text-headline tracking-headline text-ink">
+                  {job.company}
+                </h3>
+                <p className="mt-1 text-[15px] text-ink-secondary font-medium">
+                  {job.role}
+                </p>
+                <ul className="mt-5 space-y-3">
                   {job.achievements.map((achievement, i) => (
-                    <li key={i} className="flex items-start text-slate-600 text-sm leading-relaxed">
-                      <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full shrink-0"></span>
+                    <li
+                      key={i}
+                      className="flex items-start text-[15px] leading-[1.6] text-ink-secondary"
+                    >
+                      <span
+                        className="mr-3 mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-ink-tertiary"
+                        aria-hidden="true"
+                      />
                       {achievement}
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

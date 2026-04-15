@@ -1,91 +1,133 @@
-import React from 'react';
-import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
+import React, { useRef } from 'react';
 import { SKILL_DATA } from '../constants';
+import { useInView } from '../hooks/useInView';
+
+const TOOL_STACK: { label: string; stack: string; value: number }[] = [
+  { label: 'Data Engineering & Analysis', stack: 'Python, R, SQL', value: 90 },
+  { label: 'Visualization & BI', stack: 'Tableau, D3, Recharts', value: 95 },
+  { label: 'Mathematical & Systems', stack: 'Stochastic Calculus, Optimization', value: 85 },
+];
+
+const LANGUAGES: string[] = ['Chinese (Native)', 'English (Professional)', 'Japanese (Basic)'];
 
 const SkillsChart: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { threshold: 0.1, once: true });
+
   return (
-    <section id="skills" className="py-20 bg-slate-50 scroll-mt-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            The Hybrid Profile
+    <section
+      ref={sectionRef}
+      id="skills"
+      className={`relative overflow-hidden py-24 md:py-32 bg-page scroll-mt-28 fade-up ${
+        inView ? 'in-view' : ''
+      }`}
+    >
+      {/* Ambient orb */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div
+          className="orb"
+          style={{
+            top: '20%',
+            left: '-10%',
+            width: '560px',
+            height: '560px',
+            background:
+              'radial-gradient(circle at center, rgba(90, 200, 250, 0.18) 0%, rgba(90, 200, 250, 0) 60%)',
+          }}
+        />
+        <div
+          className="orb"
+          style={{
+            bottom: '-10%',
+            right: '-10%',
+            width: '580px',
+            height: '580px',
+            background:
+              'radial-gradient(circle at center, rgba(0, 122, 255, 0.16) 0%, rgba(0, 122, 255, 0) 60%)',
+          }}
+        />
+      </div>
+
+      <div className="relative max-w-grid mx-auto px-6 lg:px-8">
+        <div className="mb-16 max-w-2xl">
+          <p className="eyebrow mb-4">Skills</p>
+          <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.08] tracking-tighter text-ink mb-4">
+            The <span className="text-gradient-apple">Hybrid Profile</span>
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Modern problems require a blend of hard technical skills and soft business strategy. 
-            Here is how I balance my competencies.
+          <p className="text-body text-ink-secondary">
+            Modern problems require a blend of hard technical skills and soft business strategy.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            
-            {/* The Visual */}
-            <div className="h-[400px] w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={SKILL_DATA}>
-                  <PolarGrid stroke="#e2e8f0" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#475569', fontSize: 12, fontWeight: 600 }} />
-                  <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-                  <Radar
-                    name="Proficiency"
-                    dataKey="A"
-                    stroke="#2563eb"
-                    strokeWidth={3}
-                    fill="#3b82f6"
-                    fillOpacity={0.4}
-                  />
-                  <Legend />
-                </RadarChart>
-              </ResponsiveContainer>
-            </div>
-
-            {/* The Details */}
+        <div className="glass-card p-8 md:p-12">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+            {/* Skill bar grid */}
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Tool Stack</h3>
-              
+              <h3 className="text-headline tracking-headline text-ink mb-8">Core Competencies</h3>
               <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-semibold text-slate-700">Data Engineering & Analysis</span>
-                    <span className="text-blue-600 text-sm font-bold">Python, R, SQL</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2.5">
-                    <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '90%' }}></div>
-                  </div>
-                </div>
-
-                <div>
-                   <div className="flex justify-between mb-2">
-                    <span className="font-semibold text-slate-700">Visualization & BI</span>
-                    <span className="text-blue-600 text-sm font-bold">Tableau, D3, Recharts</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2.5">
-                    <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-
-                <div>
-                   <div className="flex justify-between mb-2">
-                    <span className="font-semibold text-slate-700">Mathematical & Systems</span>
-                    <span className="text-blue-600 text-sm font-bold">Stochastic Calculus, Optimization</span>
-                  </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2.5">
-                    <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '85%' }}></div>
-                  </div>
-                </div>
-
-                <div className="pt-6">
-                  <h4 className="font-bold text-slate-900 mb-2">Languages</h4>
-                  <div className="flex gap-2">
-                    <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm">Chinese (Native)</span>
-                    <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm">English (Professional)</span>
-                    <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm">Japanese (Basic)</span>
-                  </div>
-                </div>
-
+                {SKILL_DATA.map((skill) => {
+                  const pct = Math.round((skill.A / skill.fullMark) * 100);
+                  return (
+                    <div key={skill.subject}>
+                      <div className="flex justify-between items-baseline mb-2">
+                        <span className="text-[15px] font-medium text-ink">{skill.subject}</span>
+                        <span className="text-[13px] font-medium text-ink-tertiary">{pct}%</span>
+                      </div>
+                      <div
+                        className="h-1 w-full rounded-full bg-hairline/60 overflow-hidden"
+                        role="progressbar"
+                        aria-valuenow={pct}
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                        aria-label={skill.subject}
+                      >
+                        <div
+                          className="h-full rounded-full bg-gradient-to-r from-accent to-[#5856D6] transition-[width] duration-700 ease-apple"
+                          style={{ width: inView ? `${pct}%` : '0%' }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
+            {/* Tool stack + languages */}
+            <div>
+              <h3 className="text-headline tracking-headline text-ink mb-8">Tool Stack</h3>
+              <div className="space-y-6">
+                {TOOL_STACK.map((tool) => (
+                  <div key={tool.label}>
+                    <div className="flex justify-between items-baseline mb-2 gap-4">
+                      <span className="text-[15px] font-medium text-ink">{tool.label}</span>
+                      <span className="text-[13px] font-medium text-accent text-right">
+                        {tool.stack}
+                      </span>
+                    </div>
+                    <div className="h-1 w-full rounded-full bg-hairline/60 overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-accent to-[#5856D6] transition-[width] duration-700 ease-apple"
+                        style={{ width: inView ? `${tool.value}%` : '0%' }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-10 pt-8 border-t border-hairline/60">
+                <h4 className="text-[15px] font-semibold text-ink mb-4">Languages</h4>
+                <div className="flex flex-wrap gap-2">
+                  {LANGUAGES.map((lang) => (
+                    <span
+                      key={lang}
+                      className="glass-chip inline-flex items-center rounded-pill px-3.5 py-1.5 text-[13px] font-medium text-ink-secondary"
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

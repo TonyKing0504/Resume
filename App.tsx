@@ -12,15 +12,14 @@ import SEO from './components/SEO';
 const App: React.FC = () => {
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-slate-50 selection:bg-blue-200 selection:text-blue-900">
+      <div className="min-h-screen bg-page text-ink antialiased">
         <SEO />
         <Navigation />
         <main>
           <Hero />
           <About />
-          <Experience />
           <Projects />
-          {/* Moved SkillsChart to the bottom as requested */}
+          <Experience />
           <SkillsChart />
         </main>
         <Contact />

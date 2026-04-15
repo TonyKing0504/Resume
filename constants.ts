@@ -5,8 +5,9 @@ export const CONTACT_INFO = {
   phone: "551-405-1324",
   email: "jtonyking@hotmail.com",
   location: "Ithaca, NY",
-  linkedin: "linkedin.com/in/tao-jin", // Placeholder
-  github: "github.com/taojin", // Placeholder
+  linkedin: "www.linkedin.com/in/tao-jin-ab771426a",
+  github: "github.com/TonyKing0504",
+  blog: "dundun0504.com",
 };
 
 export const SKILL_DATA: SkillMetric[] = [
@@ -48,6 +49,18 @@ export const EXPERIENCE_DATA: Job[] = [
 ];
 
 export const PROJECTS_DATA: Project[] = [
+  {
+    id: 'proteomics-kaggle',
+    title: 'Proteomics Metadata Extraction — Kaggle Competition',
+    role: 'NLP Engineering & Analytical Deep-Dive',
+    tech: ['Python', 'NLP', 'LLM', 'difflib', 'pandas'],
+    description: 'Built an NLP pipeline to extract structured SDRF metadata from scientific publications across a 71-field taxonomy and 15 test datasets.',
+    metrics: [
+      'Analyzed the scoring metric (difflib string similarity clustering, 0.80 threshold) to identify that value normalization — not extraction logic — was the primary score driver.',
+      'Identified a 0.575 gap between validation (0.754) and test performance, root-caused to vocabulary overfitting on training data.',
+      'Pivoted analysis from rule-based to LLM-based extraction after benchmarking the ceiling of each approach.'
+    ]
+  },
   {
     id: 'diabetes-readmission',
     title: 'Diabetes Hospital Readmission Risk Modeling',

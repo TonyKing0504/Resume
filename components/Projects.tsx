@@ -1,71 +1,132 @@
-import React from 'react';
-import { Activity, Calendar, Database, TrendingUp } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Activity, Calendar, Database, FileSearch, TrendingUp } from 'lucide-react';
 import { PROJECTS_DATA } from '../constants';
+import { useInView } from '../hooks/useInView';
 
 const Projects: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { threshold: 0.05, once: true });
+
   const getProjectIcon = (projectId: string) => {
     switch (projectId) {
+      case 'proteomics-kaggle':
+        return <FileSearch size={20} strokeWidth={2} />;
       case 'diabetes-readmission':
-        return <Activity size={24} />;
+        return <Activity size={20} strokeWidth={2} />;
       case 'food-delivery':
-        return <Database size={24} />;
+        return <Database size={20} strokeWidth={2} />;
       default:
-        return <TrendingUp size={24} />;
+        return <TrendingUp size={20} strokeWidth={2} />;
     }
   };
 
   return (
-    <section id="projects" className="py-20 bg-slate-900 text-white scroll-mt-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-end mb-16">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Selected Projects</h2>
-            <p className="text-slate-400">Technical implementation meets business use-case.</p>
-          </div>
+    <section
+      ref={sectionRef}
+      id="projects"
+      className={`relative overflow-hidden py-24 md:py-32 bg-muted scroll-mt-28 fade-up ${
+        inView ? 'in-view' : ''
+      }`}
+    >
+      {/* Ambient orbs bleeding behind glass cards */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div
+          className="orb"
+          style={{
+            top: '-10%',
+            left: '-10%',
+            width: '640px',
+            height: '640px',
+            background:
+              'radial-gradient(circle at center, rgba(0, 122, 255, 0.18) 0%, rgba(0, 122, 255, 0) 60%)',
+          }}
+        />
+        <div
+          className="orb"
+          style={{
+            top: '30%',
+            right: '-10%',
+            width: '600px',
+            height: '600px',
+            background:
+              'radial-gradient(circle at center, rgba(175, 82, 222, 0.16) 0%, rgba(175, 82, 222, 0) 60%)',
+          }}
+        />
+        <div
+          className="orb"
+          style={{
+            bottom: '-10%',
+            left: '30%',
+            width: '500px',
+            height: '500px',
+            background:
+              'radial-gradient(circle at center, rgba(90, 200, 250, 0.14) 0%, rgba(90, 200, 250, 0) 60%)',
+          }}
+        />
+      </div>
+
+      <div className="relative max-w-grid mx-auto px-6 lg:px-8">
+        <div className="mb-16 max-w-2xl">
+          <p className="eyebrow mb-4">Selected Projects</p>
+          <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.08] tracking-tighter text-ink mb-4">
+            Where technical depth
+            <br />
+            meets <span className="text-gradient-apple">business impact</span>.
+          </h2>
+          <p className="text-body text-ink-secondary">
+            A selection of work spanning machine learning, database architecture, and statistical
+            modeling.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-5">
           {PROJECTS_DATA.map((project) => (
-            <div key={project.id} className="bg-slate-800 rounded-2xl p-8 hover:bg-slate-750 transition-colors border border-slate-700 hover:border-blue-500 group">
-              <div className="flex justify-between items-start mb-6">
-                <div className="bg-blue-900/30 p-3 rounded-lg text-blue-400">
+            <article key={project.id} className="glass-card p-7 md:p-8 flex flex-col">
+              <header className="flex items-start justify-between gap-4 mb-5">
+                <div className="w-11 h-11 rounded-2xl bg-accent-soft/80 text-accent flex items-center justify-center shadow-sm">
                   {getProjectIcon(project.id)}
                 </div>
                 {project.period && (
-                  <div className="flex items-center gap-2 text-xs font-medium text-slate-400">
-                    <Calendar size={14} />
+                  <div className="flex items-center gap-1.5 text-[12px] font-medium text-ink-tertiary pt-2">
+                    <Calendar size={12} strokeWidth={2} />
                     <span>{project.period}</span>
                   </div>
                 )}
+              </header>
+
+              <h3 className="text-[22px] md:text-[24px] font-semibold tracking-headline text-ink leading-tight">
+                {project.title}
+              </h3>
+              <p className="mt-1.5 text-[13px] text-ink-tertiary">{project.role}</p>
+
+              <p className="mt-5 text-[15px] leading-[1.55] text-ink-secondary">
+                {project.description}
+              </p>
+
+              {/* Metric callouts */}
+              <div className="mt-6 space-y-3">
+                {project.metrics.map((metric, i) => (
+                  <div
+                    key={i}
+                    className="rounded-card bg-white/55 backdrop-blur-md border border-white/70 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]"
+                  >
+                    <p className="text-[13px] leading-[1.5] text-ink-secondary">{metric}</p>
+                  </div>
+                ))}
               </div>
 
-              <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">{project.title}</h3>
-              <p className="text-sm text-slate-400 mb-4">{project.role}</p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
+              {/* Tech pills */}
+              <div className="mt-6 flex flex-wrap gap-2">
                 {project.tech.map((t) => (
-                  <span key={t} className="px-3 py-1 bg-slate-700 rounded-full text-xs font-medium text-slate-300">
+                  <span
+                    key={t}
+                    className="rounded-pill bg-accent-soft/90 text-accent text-[12px] font-medium px-3 py-1 border border-white/60"
+                  >
                     {t}
                   </span>
                 ))}
               </div>
-
-              <p className="text-slate-300 mb-6 leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Results (STAR)</h4>
-                <ul className="space-y-2">
-                  {project.metrics.map((metric, i) => (
-                    <li key={i} className="flex items-start text-sm text-slate-200">
-                       <span className="mr-2 mt-1 text-green-400">✓</span>
-                       {metric}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
