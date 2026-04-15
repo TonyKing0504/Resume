@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
   const footerRef = useRef<HTMLElement>(null);
   const inView = useInView(footerRef, { threshold: 0.1, once: true });
 
-  const resumeHref = `${import.meta.env.BASE_URL}Tao_Jin_Resume.pdf`;
+  const resumeHref = `${import.meta.env.BASE_URL}Cornell_Tao_Jin.docx`;
 
   return (
     <footer
@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
             <Mail size={16} strokeWidth={2.5} />
             {CONTACT_INFO.email}
           </a>
-          <a href={resumeHref} download="Tao_Jin_Resume.pdf" className="btn-ghost">
+          <a href={resumeHref} download="Cornell_Tao_Jin.docx" className="btn-ghost">
             <Download size={16} strokeWidth={2.5} />
             Download Resume
           </a>

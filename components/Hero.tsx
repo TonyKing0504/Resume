@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { threshold: 0.1, once: true });
 
-  const resumeHref = `${import.meta.env.BASE_URL}Tao_Jin_Resume.pdf`;
+  const resumeHref = `${import.meta.env.BASE_URL}Cornell_Tao_Jin.docx`;
 
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
 
         {/* CTAs */}
         <div className="mt-10 flex flex-wrap justify-center items-center gap-2">
-          <a href={resumeHref} download="Tao_Jin_Resume.pdf" className="btn-apple">
+          <a href={resumeHref} download="Cornell_Tao_Jin.docx" className="btn-apple">
             <Download size={16} strokeWidth={2.5} />
             Download Resume
           </a>

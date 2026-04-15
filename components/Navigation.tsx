@@ -28,7 +28,7 @@ const Navigation: React.FC = () => {
     { name: 'Skills', id: 'skills' },
   ];
 
-  const resumeHref = `${import.meta.env.BASE_URL}Tao_Jin_Resume.pdf`;
+  const resumeHref = `${import.meta.env.BASE_URL}Cornell_Tao_Jin.docx`;
 
   return (
     <nav
@@ -60,7 +60,7 @@ const Navigation: React.FC = () => {
               ))}
               <a
                 href={resumeHref}
-                download="Tao_Jin_Resume.pdf"
+                download="Cornell_Tao_Jin.docx"
                 className="ml-3 inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-5 py-2.5 rounded-pill text-[14px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2"
               >
                 <Download size={14} strokeWidth={2.5} />
@@ -98,7 +98,7 @@ const Navigation: React.FC = () => {
             ))}
             <a
               href={resumeHref}
-              download="Tao_Jin_Resume.pdf"
+              download="Cornell_Tao_Jin.docx"
               onClick={() => setIsOpen(false)}
               className="mt-2 flex items-center justify-center gap-2 bg-accent text-white px-4 py-3 rounded-pill text-[15px] font-semibold"
             >
