@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,43 +23,49 @@ const Navigation: React.FC = () => {
 
   const navLinks = [
     { name: 'About', id: 'about' },
-    { name: 'Experience', id: 'experience' },
     { name: 'Projects', id: 'projects' },
+    { name: 'Experience', id: 'experience' },
     { name: 'Skills', id: 'skills' },
   ];
 
+  const resumeHref = `${import.meta.env.BASE_URL}Tao_Jin_Resume.pdf`;
+
   return (
-    <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-lg py-3' : 'bg-transparent py-5'
+    <nav
+      className={`fixed w-full z-50 glass-nav transition-all duration-300 ease-apple ${
+        scrolled ? 'py-2 shadow-[0_1px_0_rgba(0,0,0,0.04)]' : 'py-2.5'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <span className="text-xl font-bold text-white tracking-wider">
-              TAO<span className="text-blue-500">.DATA</span>
-            </span>
-          </div>
-          
+      <div className="max-w-grid mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-12 md:h-14">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex-shrink-0 font-semibold text-[17px] tracking-headline text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 rounded"
+            aria-label="Back to top"
+          >
+            Tao Jin
+          </button>
+
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-center space-x-1">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-gray-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer"
+                  className="text-[15px] font-medium text-ink hover:text-accent px-3 py-2 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
                 >
                   {link.name}
                 </button>
               ))}
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer"
+              <a
+                href={resumeHref}
+                download="Tao_Jin_Resume.pdf"
+                className="ml-3 inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-5 py-2.5 rounded-pill text-[14px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2"
               >
-                Hire Me
-              </button>
+                <Download size={14} strokeWidth={2.5} />
+                Download Resume
+              </a>
             </div>
           </div>
 
@@ -67,10 +73,11 @@ const Navigation: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-ink hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
               aria-label="Main menu"
+              aria-expanded={isOpen}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
@@ -78,23 +85,26 @@ const Navigation: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-slate-900 shadow-xl border-t border-slate-800">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden glass-nav border-t border-hairline/60">
+          <div className="px-4 pt-3 pb-4 space-y-1">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.id)}
-                className="text-gray-300 hover:text-white block w-full text-left px-3 py-2 rounded-md text-base font-medium"
+                className="text-ink hover:text-accent block w-full text-left px-3 py-2.5 rounded-md text-[16px] font-medium transition-colors"
               >
                 {link.name}
               </button>
             ))}
-            <button
-               onClick={() => scrollToSection('contact')}
-               className="block w-full text-left text-blue-400 font-bold px-3 py-2"
+            <a
+              href={resumeHref}
+              download="Tao_Jin_Resume.pdf"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 flex items-center justify-center gap-2 bg-accent text-white px-4 py-3 rounded-pill text-[15px] font-semibold"
             >
-              Get In Touch
-            </button>
+              <Download size={16} strokeWidth={2.5} />
+              Download Resume
+            </a>
           </div>
         </div>
       )}
