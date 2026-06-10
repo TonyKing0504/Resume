@@ -8,22 +8,25 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import SEO from './components/SEO';
+import { LanguageProvider } from './i18n/LanguageContext';
 
 const App: React.FC = () => {
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-page text-ink antialiased">
-        <SEO />
-        <Navigation />
-        <main>
-          <Hero />
-          <About />
-          <Projects />
-          <Experience />
-          <SkillsChart />
-        </main>
-        <Contact />
-      </div>
+      <LanguageProvider>
+        <div className="min-h-screen bg-page text-ink antialiased">
+          <SEO />
+          <Navigation />
+          <main>
+            <Hero />
+            <About />
+            <Projects />
+            <Experience />
+            <SkillsChart />
+          </main>
+          <Contact />
+        </div>
+      </LanguageProvider>
     </HelmetProvider>
   );
 };

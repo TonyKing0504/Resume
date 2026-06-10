@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { MapPin } from 'lucide-react';
-import { EXPERIENCE_DATA } from '../constants';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Experience: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { threshold: 0.1, once: true });
+  const { t } = useLanguage();
 
   return (
     <section
@@ -15,17 +16,15 @@ const Experience: React.FC = () => {
     >
       <div className="max-w-content mx-auto px-6 lg:px-8">
         <div className="mb-16 max-w-2xl">
-          <p className="eyebrow mb-4">Experience</p>
+          <p className="eyebrow mb-4">{t.experience.eyebrow}</p>
           <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.08] tracking-tighter text-ink mb-4">
-            Professional Experience
+            {t.experience.headline}
           </h2>
-          <p className="text-body text-ink-secondary">
-            Delivering impact in Investment Banking and Institutional Sales.
-          </p>
+          <p className="text-body text-ink-secondary">{t.experience.description}</p>
         </div>
 
         <div className="divide-y divide-hairline/70">
-          {EXPERIENCE_DATA.map((job) => (
+          {t.experience.list.map((job) => (
             <article
               key={job.id}
               className="grid md:grid-cols-[10rem_1fr] gap-4 md:gap-8 py-10 md:py-12 first:pt-0 last:pb-0"
@@ -41,12 +40,8 @@ const Experience: React.FC = () => {
 
               {/* Content column */}
               <div>
-                <h3 className="text-headline tracking-headline text-ink">
-                  {job.company}
-                </h3>
-                <p className="mt-1 text-[15px] text-ink-secondary font-medium">
-                  {job.role}
-                </p>
+                <h3 className="text-headline tracking-headline text-ink">{job.company}</h3>
+                <p className="mt-1 text-[15px] text-ink-secondary font-medium">{job.role}</p>
                 <ul className="mt-5 space-y-3">
                   {job.achievements.map((achievement, i) => (
                     <li

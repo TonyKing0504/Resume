@@ -1,18 +1,11 @@
 import React, { useRef } from 'react';
-import { SKILL_DATA } from '../constants';
 import { useInView } from '../hooks/useInView';
-
-const TOOL_STACK: { label: string; stack: string; value: number }[] = [
-  { label: 'Data Engineering & Analysis', stack: 'Python, R, SQL', value: 90 },
-  { label: 'Visualization & BI', stack: 'Tableau, D3, Recharts', value: 95 },
-  { label: 'Mathematical & Systems', stack: 'Stochastic Calculus, Optimization', value: 85 },
-];
-
-const LANGUAGES: string[] = ['Chinese (Native)', 'English (Professional)', 'Japanese (Basic)'];
+import { useLanguage } from '../i18n/LanguageContext';
 
 const SkillsChart: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { threshold: 0.1, once: true });
+  const { t } = useLanguage();
 
   return (
     <section
@@ -50,22 +43,23 @@ const SkillsChart: React.FC = () => {
 
       <div className="relative max-w-grid mx-auto px-6 lg:px-8">
         <div className="mb-16 max-w-2xl">
-          <p className="eyebrow mb-4">Skills</p>
+          <p className="eyebrow mb-4">{t.skills.eyebrow}</p>
           <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.08] tracking-tighter text-ink mb-4">
-            The <span className="text-gradient-apple">Hybrid Profile</span>
+            {t.skills.headlineLead}
+            <span className="text-gradient-apple">{t.skills.headlineEmphasis}</span>
           </h2>
-          <p className="text-body text-ink-secondary">
-            Modern problems require a blend of hard technical skills and soft business strategy.
-          </p>
+          <p className="text-body text-ink-secondary">{t.skills.description}</p>
         </div>
 
         <div className="glass-card p-8 md:p-12">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             {/* Skill bar grid */}
             <div>
-              <h3 className="text-headline tracking-headline text-ink mb-8">Core Competencies</h3>
+              <h3 className="text-headline tracking-headline text-ink mb-8">
+                {t.skills.coreCompetencies}
+              </h3>
               <div className="space-y-6">
-                {SKILL_DATA.map((skill) => {
+                {t.skills.skillList.map((skill) => {
                   const pct = Math.round((skill.A / skill.fullMark) * 100);
                   return (
                     <div key={skill.subject}>
@@ -94,9 +88,11 @@ const SkillsChart: React.FC = () => {
 
             {/* Tool stack + languages */}
             <div>
-              <h3 className="text-headline tracking-headline text-ink mb-8">Tool Stack</h3>
+              <h3 className="text-headline tracking-headline text-ink mb-8">
+                {t.skills.toolStack}
+              </h3>
               <div className="space-y-6">
-                {TOOL_STACK.map((tool) => (
+                {t.skills.toolStackList.map((tool) => (
                   <div key={tool.label}>
                     <div className="flex justify-between items-baseline mb-2 gap-4">
                       <span className="text-[15px] font-medium text-ink">{tool.label}</span>
@@ -115,9 +111,9 @@ const SkillsChart: React.FC = () => {
               </div>
 
               <div className="mt-10 pt-8 border-t border-hairline/60">
-                <h4 className="text-[15px] font-semibold text-ink mb-4">Languages</h4>
+                <h4 className="text-[15px] font-semibold text-ink mb-4">{t.skills.languages}</h4>
                 <div className="flex flex-wrap gap-2">
-                  {LANGUAGES.map((lang) => (
+                  {t.skills.languageList.map((lang) => (
                     <span
                       key={lang}
                       className="glass-chip inline-flex items-center rounded-pill px-3.5 py-1.5 text-[13px] font-medium text-ink-secondary"

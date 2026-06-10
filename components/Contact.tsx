@@ -2,10 +2,12 @@ import React, { useRef } from 'react';
 import { Mail, Linkedin, MapPin, Github, Download, BookOpen } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Contact: React.FC = () => {
   const footerRef = useRef<HTMLElement>(null);
   const inView = useInView(footerRef, { threshold: 0.1, once: true });
+  const { t } = useLanguage();
 
   const resumeHref = `${import.meta.env.BASE_URL}Cornell_Tao_Jin.docx`;
 
@@ -44,13 +46,14 @@ const Contact: React.FC = () => {
       </div>
 
       <div className="relative max-w-content mx-auto px-6 lg:px-8 text-center">
-        <p className="eyebrow mb-4">Get in Touch</p>
+        <p className="eyebrow mb-4">{t.contact.eyebrow}</p>
         <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.08] tracking-tighter text-ink mb-4">
-          Ready to generate <span className="text-gradient-apple">insights</span>?
+          {t.contact.headlineLead}
+          <span className="text-gradient-apple">{t.contact.headlineEmphasis}</span>
+          {t.contact.headlineSuffix}
         </h2>
         <p className="text-body text-ink-secondary max-w-xl mx-auto mb-10">
-          Open to Business Analyst and Data Analyst roles. Let&apos;s talk about how I can help
-          your team turn data into decisions.
+          {t.contact.description}
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mb-14 no-print">
@@ -60,20 +63,20 @@ const Contact: React.FC = () => {
           </a>
           <a href={resumeHref} download="Cornell_Tao_Jin.docx" className="btn-ghost">
             <Download size={16} strokeWidth={2.5} />
-            Download Resume
+            {t.contact.downloadResume}
           </a>
         </div>
 
         <div className="flex justify-center items-center gap-6 mb-12 text-ink-tertiary">
           <div className="flex items-center gap-2 text-[14px]">
             <MapPin size={14} strokeWidth={2} />
-            <span>{CONTACT_INFO.location}</span>
+            <span>{t.contact.location}</span>
           </div>
           <a
             href={`https://${CONTACT_INFO.linkedin}`}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
+            aria-label={t.contact.linkedinLabel}
             className="glass-chip w-10 h-10 rounded-full flex items-center justify-center text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
           >
             <Linkedin size={16} strokeWidth={2} />
@@ -82,7 +85,7 @@ const Contact: React.FC = () => {
             href={`https://${CONTACT_INFO.github}`}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
+            aria-label={t.contact.githubLabel}
             className="glass-chip w-10 h-10 rounded-full flex items-center justify-center text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
           >
             <Github size={16} strokeWidth={2} />
@@ -91,7 +94,7 @@ const Contact: React.FC = () => {
             href={`https://${CONTACT_INFO.blog}`}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Personal Blog"
+            aria-label={t.contact.blogLabel}
             title={CONTACT_INFO.blog}
             className="glass-chip w-10 h-10 rounded-full flex items-center justify-center text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
           >
@@ -100,7 +103,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="text-[12px] text-ink-tertiary border-t border-hairline/60 pt-8">
-          <p>© {new Date().getFullYear()} Tao (Tony) Jin. Designed in the spirit of Apple.</p>
+          <p>© {new Date().getFullYear()} {t.contact.copyrightSuffix}</p>
         </div>
       </div>
     </footer>

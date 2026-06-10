@@ -1,14 +1,17 @@
 import React, { useRef } from 'react';
-import { Activity, Calendar, Database, FileSearch, TrendingUp } from 'lucide-react';
-import { PROJECTS_DATA } from '../constants';
+import { Activity, Calendar, Database, FileSearch, ShoppingCart, TrendingUp } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Projects: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { threshold: 0.05, once: true });
+  const { t } = useLanguage();
 
   const getProjectIcon = (projectId: string) => {
     switch (projectId) {
+      case 'olist-marketplace':
+        return <ShoppingCart size={20} strokeWidth={2} />;
       case 'proteomics-kaggle':
         return <FileSearch size={20} strokeWidth={2} />;
       case 'diabetes-readmission':
@@ -67,20 +70,19 @@ const Projects: React.FC = () => {
 
       <div className="relative max-w-grid mx-auto px-6 lg:px-8">
         <div className="mb-16 max-w-2xl">
-          <p className="eyebrow mb-4">Selected Projects</p>
+          <p className="eyebrow mb-4">{t.projects.eyebrow}</p>
           <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.08] tracking-tighter text-ink mb-4">
-            Where technical depth
+            {t.projects.headlineLead}
             <br />
-            meets <span className="text-gradient-apple">business impact</span>.
+            {t.projects.headlineEmphasisPrefix}
+            <span className="text-gradient-apple">{t.projects.headlineEmphasis}</span>
+            {t.projects.headlineSuffix}
           </h2>
-          <p className="text-body text-ink-secondary">
-            A selection of work spanning machine learning, database architecture, and statistical
-            modeling.
-          </p>
+          <p className="text-body text-ink-secondary">{t.projects.description}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-5">
-          {PROJECTS_DATA.map((project) => (
+          {t.projects.list.map((project) => (
             <article key={project.id} className="glass-card p-7 md:p-8 flex flex-col">
               <header className="flex items-start justify-between gap-4 mb-5">
                 <div className="w-11 h-11 rounded-2xl bg-accent-soft/80 text-accent flex items-center justify-center shadow-sm">
@@ -117,12 +119,12 @@ const Projects: React.FC = () => {
 
               {/* Tech pills */}
               <div className="mt-6 flex flex-wrap gap-2">
-                {project.tech.map((t) => (
+                {project.tech.map((techItem) => (
                   <span
-                    key={t}
+                    key={techItem}
                     className="rounded-pill bg-accent-soft/90 text-accent text-[12px] font-medium px-3 py-1 border border-white/60"
                   >
-                    {t}
+                    {techItem}
                   </span>
                 ))}
               </div>

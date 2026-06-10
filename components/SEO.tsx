@@ -1,62 +1,64 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CONTACT_INFO } from '../constants';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const SEO: React.FC = () => {
+  const { language, t } = useLanguage();
+
   const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": CONTACT_INFO.name,
-    "jobTitle": "Business Analyst & Data Strategist",
-    "telephone": CONTACT_INFO.phone,
-    "email": CONTACT_INFO.email,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Ithaca",
-      "addressRegion": "NY"
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: CONTACT_INFO.name,
+    jobTitle: t.seo.jobTitle,
+    telephone: CONTACT_INFO.phone,
+    email: CONTACT_INFO.email,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Ithaca',
+      addressRegion: 'NY',
     },
-    "alumniOf": [
+    alumniOf: [
       {
-        "@type": "CollegeOrUniversity",
-        "name": "Cornell University"
+        '@type': 'CollegeOrUniversity',
+        name: 'Cornell University',
       },
       {
-        "@type": "CollegeOrUniversity",
-        "name": "University of British Columbia"
-      }
+        '@type': 'CollegeOrUniversity',
+        name: 'University of British Columbia',
+      },
     ],
-    "knowsAbout": [
-      "Data Analytics",
-      "Business Intelligence",
-      "Financial Modeling",
-      "Python",
-      "SQL",
-      "System Engineering",
-      "Market Research"
+    knowsAbout: [
+      'Data Analytics',
+      'Business Intelligence',
+      'Financial Modeling',
+      'Python',
+      'SQL',
+      'System Engineering',
+      'Market Research',
     ],
-    "url": "https://taojin-portfolio.com", // Example URL
-    "sameAs": [
-      `https://${CONTACT_INFO.linkedin}`,
-      `https://${CONTACT_INFO.github}`
-    ]
+    url: 'https://taojin-portfolio.com',
+    sameAs: [`https://${CONTACT_INFO.linkedin}`, `https://${CONTACT_INFO.github}`],
   };
 
+  const htmlLang = language === 'zh' ? 'zh-CN' : 'en';
+  const ogLocale = language === 'zh' ? 'zh_CN' : 'en_US';
+
   return (
-    <Helmet>
-      <title>Tao (Tony) Jin | Business & Data Analyst Portfolio</title>
-      <meta name="description" content="Portfolio of Tao (Tony) Jin, a Cornell Systems Engineering Master's student specializing in Data Analytics, Financial Modeling, and Strategic Optimization." />
-      <meta name="keywords" content="Data Analyst, Business Analyst, Python, SQL, Tableau, Financial Modeling, Cornell, UBC" />
-      
+    <Helmet htmlAttributes={{ lang: htmlLang }}>
+      <title>{t.seo.title}</title>
+      <meta name="description" content={t.seo.description} />
+      <meta name="keywords" content={t.seo.keywords} />
+
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="profile" />
-      <meta property="og:title" content="Tao (Tony) Jin | Data Driven Strategist" />
-      <meta property="og:description" content="Driving business growth through data storytelling. 9% risk reduction & 12% conversion boost track record." />
-      <meta property="og:image" content="https://picsum.photos/1200/630" /> 
-      
+      <meta property="og:locale" content={ogLocale} />
+      <meta property="og:title" content={t.seo.ogTitle} />
+      <meta property="og:description" content={t.seo.ogDescription} />
+      <meta property="og:image" content="https://picsum.photos/1200/630" />
+
       {/* JSON-LD for AI Search Engines (GEO) */}
-      <script type="application/ld+json">
-        {JSON.stringify(schemaData)}
-      </script>
+      <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
     </Helmet>
   );
 };

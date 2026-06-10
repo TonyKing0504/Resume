@@ -2,10 +2,12 @@ import React, { useRef } from 'react';
 import { Download, Linkedin, Github, BookOpen } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import { CONTACT_INFO } from '../constants';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { threshold: 0.1, once: true });
+  const { t } = useLanguage();
 
   const resumeHref = `${import.meta.env.BASE_URL}Cornell_Tao_Jin.docx`;
 
@@ -61,37 +63,36 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
-        <p className="eyebrow mb-6">
-          Cornell Systems Engineering M.Eng · Business Analyst / Data Analyst
-        </p>
+        <p className="eyebrow mb-6">{t.hero.eyebrow}</p>
 
         <h1 className="text-[52px] sm:text-[64px] md:text-[88px] font-semibold leading-[0.95] tracking-[-0.035em] text-ink">
-          Tao (Tony) Jin
+          {CONTACT_INFO.name}
         </h1>
 
         <p className="mt-7 mx-auto max-w-[600px] text-body-lg text-ink-secondary">
-          I translate data into business decisions — bridging Python automation, SQL architecture,
-          and executive-ready insights.
+          {t.hero.description}
         </p>
 
         {/* Stats strip — glass credential chips */}
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <span className="glass-chip inline-flex items-center rounded-pill px-4 py-2 text-[13px] font-medium text-ink-secondary">
-            Cornell M.Eng
-          </span>
-          <span className="glass-chip inline-flex items-center rounded-pill px-4 py-2 text-[13px] font-medium text-ink-secondary">
-            UBC Math
-          </span>
+          {t.hero.chips.map((chip) => (
+            <span
+              key={chip}
+              className="glass-chip inline-flex items-center rounded-pill px-4 py-2 text-[13px] font-medium text-ink-secondary"
+            >
+              {chip}
+            </span>
+          ))}
         </div>
 
         {/* CTAs */}
         <div className="mt-10 flex flex-wrap justify-center items-center gap-2">
           <a href={resumeHref} download="Cornell_Tao_Jin.docx" className="btn-apple">
             <Download size={16} strokeWidth={2.5} />
-            Download Resume
+            {t.hero.downloadResume}
           </a>
-          <button onClick={scrollToProjects} className="btn-ghost" aria-label="View projects">
-            View Projects
+          <button onClick={scrollToProjects} className="btn-ghost" aria-label={t.hero.viewProjects}>
+            {t.hero.viewProjects}
             <span aria-hidden="true">›</span>
           </button>
         </div>
@@ -105,7 +106,7 @@ const Hero: React.FC = () => {
             className="glass-chip inline-flex items-center gap-2 rounded-pill px-4 py-2.5 text-[13px] font-semibold text-accent hover:text-accent-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
           >
             <Linkedin size={14} strokeWidth={2.4} />
-            LinkedIn
+            {t.hero.linkedin}
           </a>
           <a
             href={`https://${CONTACT_INFO.github}`}
@@ -114,7 +115,7 @@ const Hero: React.FC = () => {
             className="glass-chip inline-flex items-center gap-2 rounded-pill px-4 py-2.5 text-[13px] font-semibold text-accent hover:text-accent-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
           >
             <Github size={14} strokeWidth={2.4} />
-            GitHub
+            {t.hero.github}
           </a>
           <a
             href={`https://${CONTACT_INFO.blog}`}
@@ -123,7 +124,7 @@ const Hero: React.FC = () => {
             className="glass-chip inline-flex items-center gap-2 rounded-pill px-4 py-2.5 text-[13px] font-semibold text-accent hover:text-accent-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
           >
             <BookOpen size={14} strokeWidth={2.4} />
-            Blog
+            {t.hero.blog}
           </a>
         </div>
       </div>
