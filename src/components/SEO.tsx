@@ -6,10 +6,14 @@ import { useLanguage } from '../i18n/LanguageContext';
 const SEO: React.FC = () => {
   const { language, t } = useLanguage();
 
+  const localizedName = language === 'zh' ? '金韬' : CONTACT_INFO.name;
+  const alternateName = language === 'zh' ? CONTACT_INFO.name : '金韬';
+
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: CONTACT_INFO.name,
+    name: localizedName,
+    alternateName,
     jobTitle: t.seo.jobTitle,
     telephone: CONTACT_INFO.phone,
     email: CONTACT_INFO.email,

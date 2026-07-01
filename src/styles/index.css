@@ -1,0 +1,355 @@
+/* Self-hosted fonts (Fontsource bundles woff2 from node_modules) */
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Satoshi — self-hosted (body). Latin only; CJK falls back via the stack. */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   Direction B — dark command-center design system.
+   NOTE on font paths: /fonts/* works because the site is served
+   from the custom-domain root (public/CNAME). If the custom
+   domain is ever dropped for a project-subpath Pages URL, switch
+   these @font-face url()s to ./fonts/ or inject BASE_URL.
+   ============================================================ */
+
+:root {
+  --bg: #0a0b0d;
+  --bg-elev: #121419;
+  --bg-elev-2: #171a20;
+  --text: #eef0f5;
+  --text-secondary: #9aa0aa;
+  --text-tertiary: #6b7280;
+  --hairline: #23262d;
+  --hairline-strong: #2e323b;
+  --accent: #6f74f2;
+  --accent-hover: #8488f6;
+  --accent-soft: rgba(111, 116, 242, 0.12);
+  --status-ok: #34d399;
+  --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+body {
+  font-family: 'Satoshi', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+  background-color: #0a0b0d;
+  color: #eef0f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: rgba(111, 116, 242, 0.28);
+  color: #ffffff;
+}
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px rgba(111, 116, 242, 0.6);
+  border-radius: 4px;
+}
+
+/* ---- Reusable command-center components ---- */
+
+.eyebrow {
+  font-family: 'JetBrains Mono', SFMono-Regular, ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.panel {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', SFMono-Regular, ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1;
+  color: #ffffff;
+  background: var(--accent);
+  padding: 0.7rem 1.1rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: background-color 220ms var(--ease-expo), box-shadow 220ms var(--ease-expo);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', SFMono-Regular, ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--text-secondary);
+  background: transparent;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--hairline-strong);
+  transition: color 220ms var(--ease-expo), border-color 220ms var(--ease-expo);
+}
+.btn-ghost:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', SFMono-Regular, ui-monospace, monospace;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--hairline);
+  border-radius: 5px;
+  padding: 0.28rem 0.55rem;
+}
+
+.kbd {
+  font-family: 'JetBrains Mono', SFMono-Regular, ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+/* Fine grid backdrop for the hero (absolutely positioned child) */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+  -webkit-mask-image: radial-gradient(120% 90% at 20% 0%, #000 30%, transparent 78%);
+  mask-image: radial-gradient(120% 90% at 20% 0%, #000 30%, transparent 78%);
+  pointer-events: none;
+}
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+/* Sparkline draw-in */
+.spark {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 900ms var(--ease-expo);
+}
+.spark.drawn {
+  stroke-dashoffset: 0;
+}
+
+/* Project disclosure (grid-rows height animation; content stays in DOM) */
+.proj-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 420ms var(--ease-expo);
+}
+.proj-detail.open {
+  grid-template-rows: 1fr;
+}
+.proj-detail > .proj-detail-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Scroll reveal (Phase 1; migrates to GSAP in Phase 2) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 600ms var(--ease-expo), transform 600ms var(--ease-expo);
+}
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Command palette (cmdk) ---- */
+.cmd-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 100;
+}
+.cmd-content {
+  position: fixed;
+  top: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(560px, 92vw);
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 12px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  z-index: 101;
+}
+[cmdk-input] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--text);
+  font-family: 'JetBrains Mono', SFMono-Regular, ui-monospace, monospace;
+  font-size: 14px;
+  padding: 16px 18px;
+  outline: none;
+}
+[cmdk-input]::placeholder {
+  color: var(--text-tertiary);
+}
+[cmdk-list] {
+  max-height: 344px;
+  overflow: auto;
+  padding: 8px;
+  scroll-padding: 8px;
+}
+[cmdk-group-heading] {
+  font-family: 'JetBrains Mono', SFMono-Regular, ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: 12px 10px 6px;
+}
+[cmdk-item] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+[cmdk-item][data-selected='true'] {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+[cmdk-item] svg {
+  color: var(--text-tertiary);
+}
+[cmdk-item][data-selected='true'] svg {
+  color: var(--accent);
+}
+.cmd-hint {
+  margin-left: auto;
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+[cmdk-empty] {
+  padding: 24px 12px;
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
+
+/* Print — collapse the dark console to a clean light export */
+@media print {
+  nav,
+  .no-print,
+  .grid-bg,
+  .glow {
+    display: none !important;
+  }
+  * {
+    box-shadow: none !important;
+    background: transparent !important;
+    color: #000 !important;
+    border-color: #999 !important;
+  }
+  body {
+    background: #ffffff !important;
+  }
+  section,
+  article {
+    page-break-inside: avoid;
+    padding: 12px 0 !important;
+  }
+  a[href^='http']::after,
+  a[href^='mailto']::after {
+    content: ' (' attr(href) ')';
+    font-size: 10px;
+    color: #444;
+  }
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .proj-detail {
+    grid-template-rows: 1fr !important;
+  }
+}
+
+/* Respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .proj-detail {
+    transition: none !important;
+  }
+}

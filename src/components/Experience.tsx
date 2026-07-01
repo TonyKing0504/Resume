@@ -17,7 +17,7 @@ const Experience: React.FC = () => {
       <div className="max-w-content mx-auto px-6 lg:px-8">
         <div className="mb-16 max-w-2xl">
           <p className="eyebrow mb-4">{t.experience.eyebrow}</p>
-          <h2 className="text-[32px] md:text-[44px] font-semibold leading-[1.08] tracking-tighter text-ink mb-4">
+          <h2 className="font-display text-[clamp(1.9rem,4vw,2.8rem)] font-medium leading-[1.1] tracking-tighter text-ink mb-4">
             {t.experience.headline}
           </h2>
           <p className="text-body text-ink-secondary">{t.experience.description}</p>
@@ -40,7 +40,7 @@ const Experience: React.FC = () => {
 
               {/* Content column */}
               <div>
-                <h3 className="text-headline tracking-headline text-ink">{job.company}</h3>
+                <h3 className="font-display text-headline tracking-headline text-ink">{job.company}</h3>
                 <p className="mt-1 text-[15px] text-ink-secondary font-medium">{job.role}</p>
                 <ul className="mt-5 space-y-3">
                   {job.achievements.map((achievement, i) => (
@@ -49,7 +49,7 @@ const Experience: React.FC = () => {
                       className="flex items-start text-[15px] leading-[1.6] text-ink-secondary"
                     >
                       <span
-                        className="mr-3 mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-ink-tertiary"
+                        className="mr-3 mt-[0.55rem] h-1 w-1 shrink-0 rounded-full bg-accent"
                         aria-hidden="true"
                       />
                       {achievement}

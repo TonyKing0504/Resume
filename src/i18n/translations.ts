@@ -24,6 +24,7 @@ export interface TranslationContent {
     mainMenu: string;
   };
   hero: {
+    name: string;
     eyebrow: string;
     description: string;
     chips: string[];
@@ -115,10 +116,11 @@ export const translations: Record<Language, TranslationContent> = {
       mainMenu: 'Main menu',
     },
     hero: {
-      eyebrow: "Cornell M.Eng Systems Engineering · Graduating May 2026 · Business / Data Analyst",
+      name: 'Tao (Tony) Jin',
+      eyebrow: 'Cornell M.Eng Systems Engineering · Graduating May 2026 · Data Science / Data Analytics',
       description:
         'I turn raw data into decisions that land on the executive agenda — Python automation, auditable SQL pipelines, and strategy decks that institutional clients actually cite.',
-      chips: ["Cornell M.Eng '26", 'UBC Mathematics', 'Available May 2026'],
+      chips: ["Cornell M.Eng '26", 'UBC Mathematics', 'Available immediately'],
       downloadResume: 'Download Resume',
       viewProjects: 'View Projects',
       linkedin: 'LinkedIn',
@@ -140,7 +142,7 @@ export const translations: Record<Language, TranslationContent> = {
           ". My edge is the last mile — turning a model's output into the single sentence an executive can decide on in 30 seconds.",
       },
       paragraph2:
-        'Graduating May 2026 from Cornell Systems Engineering. Actively interviewing for Business Analyst, Data Analyst, and Strategy & Operations roles across the U.S. (Northeast preferred) and Greater China (Shanghai, Beijing, Shenzhen, Hangzhou).',
+        'Graduating May 2026 from Cornell Systems Engineering. Actively interviewing for Data Science, Data Analyst, and Business Analyst roles across the U.S., in Vancouver and Toronto, and in mainland China (Beijing, Shanghai, Guangzhou, Hangzhou).',
       cards: [
         {
           title: 'Shipped, not just coded',
@@ -238,8 +240,20 @@ export const translations: Record<Language, TranslationContent> = {
       eyebrow: 'Experience',
       headline: 'Where I learned to ship.',
       description:
-        'Two summers on live investment banking and institutional sales desks — research, automation, and client-facing materials that reached the Monday-morning meeting.',
+        'Data and finance internships in Toronto and Shanghai — SQL pipelines, ETL automation, and client-facing research that reached the Monday-morning meeting.',
       list: [
+        {
+          id: 'aifuku',
+          company: 'Aifuku',
+          role: 'Data Science Intern',
+          location: 'Toronto, ON',
+          period: 'Jan 2025 – May 2025',
+          achievements: [
+            'Wrote PostgreSQL queries with the operations team on a Postgres 15 source-of-truth database spanning 4 operational inputs and 9 core tables, validating orders, receipts, inventory, and ledger data for Metabase reporting.',
+            'Built a 2-block Mage ETL workflow to fetch the latest bank or credit-card PDF from Google Drive, parse transaction fields with Gemini, and output structured JSON for ledger reconciliation.',
+            'Analyzed 5 linked operational entities — receipts, line items, inventory movements, production batches, and customer orders — collaborating cross-functionally to surface data-quality and schema issues for reporting workflows.',
+          ],
+        },
         {
           id: 'grow-investment',
           company: 'Grow Investment Group',
@@ -302,22 +316,22 @@ export const translations: Record<Language, TranslationContent> = {
       headlineEmphasis: 'to decision',
       headlineSuffix: '.',
       description:
-        "Available full-time from May 2026. Open to on-site (U.S. Northeast, Shanghai, Beijing, Shenzhen, Hangzhou) or remote. Tell me what you're trying to decide — I'll tell you what the data says.",
+        "Available to start immediately — open to roles anywhere in the U.S., in Vancouver or Toronto, and in Beijing, Shanghai, Guangzhou, or Hangzhou, on-site or remote. Tell me what you're trying to decide — I'll tell you what the data says.",
       emailCta: 'Email me',
       downloadResume: 'Download Resume',
-      location: 'Ithaca, NY · Available May 2026',
+      location: 'U.S. · Vancouver · Toronto · China · Available immediately',
       linkedinLabel: 'LinkedIn',
       githubLabel: 'GitHub',
       blogLabel: 'Personal Blog',
-      copyrightSuffix: 'Tao (Tony) Jin. Designed in the spirit of Apple.',
+      copyrightSuffix: 'Tao (Tony) Jin. Designed & built from scratch.',
     },
     seo: {
-      title: 'Tao (Tony) Jin | Business & Data Analyst (Cornell M.Eng, May 2026)',
+      title: 'Tao (Tony) Jin | Data Scientist & Data Analyst (Cornell M.Eng, May 2026)',
       description:
-        'Business Analyst / Data Analyst portfolio of Tao (Tony) Jin — Cornell M.Eng Systems Engineering, available May 2026. Track record: 9% selloff reduction, 12% conversion lift, Python & SQL delivered to live desks.',
+        'Data Science / Data Analyst portfolio of Tao (Tony) Jin (金韬) — Cornell M.Eng Systems Engineering, available May 2026. Track record: 9% selloff reduction, 12% conversion lift, Python, SQL & ML delivered to live desks.',
       keywords:
-        'Data Analyst, Business Analyst, Python, SQL, Tableau, Financial Modeling, Cornell M.Eng, UBC Math, May 2026 graduate, Shanghai, New York',
-      jobTitle: 'Business Analyst & Data Strategist',
+        'Data Science, Data Scientist, Data Analyst, Machine Learning, Business Analyst, Python, SQL, Tableau, Financial Modeling, Cornell M.Eng, UBC Math, May 2026 graduate, United States, Canada, Vancouver, Toronto, Beijing, Shanghai, Guangzhou, Hangzhou',
+      jobTitle: 'Data Scientist & Data Analyst',
       ogTitle: 'Tao (Tony) Jin | From Dashboard to Decision',
       ogDescription:
         'Cornell M.Eng (May 2026). 9% selloff reduction · 12% conversion lift · Python & SQL shipped to live desks.',
@@ -339,10 +353,11 @@ export const translations: Record<Language, TranslationContent> = {
       mainMenu: '主菜单',
     },
     hero: {
-      eyebrow: '康奈尔大学系统工程硕士 · 2026 年 5 月毕业 · 求职方向:商业分析 / 数据分析',
+      name: '金韬',
+      eyebrow: '康奈尔大学系统工程硕士 · 2026 年 5 月毕业 · 求职方向:数据科学 / 数据分析',
       description:
         '将业务数据转化为可以落地执行的决策。过往实习中,我独立交付了稳定运行的 Python 自动化工具、可追溯的 SQL 数据流程,以及被机构客户纳入投资判断的研究报告。',
-      chips: ['康奈尔 M.Eng 2026 届', 'UBC 数学 本科', '2026 年 5 月可全职入职'],
+      chips: ['康奈尔 M.Eng 2026 届', 'UBC 数学 本科', '可立即入职'],
       downloadResume: '下载简历',
       viewProjects: '查看项目',
       linkedin: '领英',
@@ -363,7 +378,7 @@ export const translations: Record<Language, TranslationContent> = {
           '。相比单纯的模型搭建,我更擅长将分析结论提炼为管理层能够在短时间内把握并据以决策的关键信息。',
       },
       paragraph2:
-        '2026 年 5 月于康奈尔大学系统工程硕士项目毕业,目前积极寻求商业分析、数据分析以及战略与运营方向的全职机会。意向工作地包括美国东北部,以及国内一线城市(上海、北京、深圳、杭州),同时也可以考虑远程协作。',
+        '2026 年 5 月于康奈尔大学系统工程硕士项目毕业,目前积极寻求数据科学、数据分析与商业分析方向的全职机会。意向工作地覆盖全美、加拿大(温哥华、多伦多)以及中国(北京、上海、广州、杭州),同时也可以考虑远程协作。',
       cards: [
         {
           title: '交付即上线',
@@ -460,8 +475,20 @@ export const translations: Record<Language, TranslationContent> = {
       eyebrow: '工作经历',
       headline: '在一线业务中积累的实战经验',
       description:
-        '两段实习分别在机构销售与投资银行业务一线,参与研究支持、自动化工具开发与客户材料撰写,所交付的成果均被团队在日常工作中直接采用。',
+        '实习经历分布在多伦多与上海,涵盖数据科学、机构销售与投资银行——SQL 数据流程、ETL 自动化与客户材料,所交付的成果均被团队在日常工作中直接采用。',
       list: [
+        {
+          id: 'aifuku',
+          company: 'Aifuku',
+          role: '数据科学实习生',
+          location: '加拿大多伦多',
+          period: '2025 年 1 月 – 2025 年 5 月',
+          achievements: [
+            '与运营团队协作编写 PostgreSQL 查询,在覆盖 4 个业务输入、9 张核心表的 Postgres 15 数据底座上校验订单、收据、库存与账目数据,支撑 Metabase 报表。',
+            '搭建 2 模块 Mage ETL 流程,从 Google Drive 拉取最新银行/信用卡 PDF,用 Gemini 解析交易字段并输出结构化 JSON,支持账目对账。',
+            '分析收据、行项目、库存变动、生产批次与客户订单等 5 类关联业务实体,通过跨团队协作定位报表流程中的数据质量与表结构问题。',
+          ],
+        },
         {
           id: 'grow-investment',
           company: 'GROW 思睿',
@@ -520,22 +547,22 @@ export const translations: Record<Language, TranslationContent> = {
       headlineEmphasis: '真正驱动决策',
       headlineSuffix: '。',
       description:
-        '2026 年 5 月起可全职入职,意向工作地包括美国东北部以及国内一线城市(上海、北京、深圳、杭州),同时可以考虑远程协作。欢迎就您关注的业务问题进行交流,我很乐意从数据视角提供一些分析与建议。',
+        '可立即全职入职,意向工作地覆盖全美、加拿大(温哥华、多伦多)以及中国(北京、上海、广州、杭州),线上线下皆可。欢迎就您关注的业务问题进行交流,我很乐意从数据视角提供一些分析与建议。',
       emailCta: '发邮件联系',
       downloadResume: '下载简历',
-      location: '美国纽约州伊萨卡 · 2026 年 5 月可入职',
+      location: '全美 · 温哥华 · 多伦多 · 中国 · 可立即入职',
       linkedinLabel: '领英',
       githubLabel: 'GitHub',
       blogLabel: '个人博客',
-      copyrightSuffix: 'Tao (Tony) Jin 版权所有。致敬 Apple 的设计精神。',
+      copyrightSuffix: 'Tao (Tony) Jin 版权所有。全站从零设计与构建。',
     },
     seo: {
-      title: 'Tao (Tony) Jin | 商业 / 数据分析师 · 康奈尔 M.Eng · 2026 年 5 月可入职',
+      title: '金韬 (Tao Jin) | 数据科学 / 数据分析 · 康奈尔 M.Eng · 2026 年 5 月可入职',
       description:
-        'Tao (Tony) Jin 的个人作品集:康奈尔大学系统工程硕士,2026 年 5 月毕业,可立即全职入职。核心成果包括协助机构客户降低抛售压力 9%、推动客户转化率提升 12%,所开发的 Python 与 SQL 工具已在企业业务一线落地使用。',
+        '金韬 (Tao Jin) 的个人作品集:康奈尔大学系统工程硕士,2026 年 5 月毕业,求职方向数据科学 / 数据分析。核心成果包括协助机构客户降低抛售压力 9%、推动客户转化率提升 12%,所开发的 Python、SQL 与机器学习工具已在企业业务一线落地使用。',
       keywords:
-        '商业分析, 数据分析, Python, SQL, Tableau, 财务建模, 康奈尔 M.Eng, UBC 数学, 2026 应届, 上海, 北京, 深圳, 杭州, 纽约',
-      jobTitle: '商业分析师与数据战略师',
+        '数据科学, 数据科学家, 数据分析, 机器学习, 商业分析, Python, SQL, Tableau, 财务建模, 康奈尔 M.Eng, UBC 数学, 2026 应届, 全美, 加拿大, 温哥华, 多伦多, 北京, 上海, 广州, 杭州',
+      jobTitle: '数据科学家与数据分析师',
       ogTitle: 'Tao (Tony) Jin | 让数据真正驱动决策',
       ogDescription:
         '康奈尔大学系统工程硕士(2026 年 5 月)。机构客户抛售压力降低 9% · 产品客户转化率提升 12% · Python 与 SQL 工具已在业务一线落地。',
