@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Download, Linkedin, Github, BookOpen, ArrowRight } from 'lucide-react';
+import { Download, Linkedin, Github, BookOpen, ArrowRight, Mail } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import { CONTACT_INFO, RESUME_FILES } from '../constants';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -17,9 +17,10 @@ const Hero: React.FC = () => {
   };
 
   const socials = [
-    { href: `https://${CONTACT_INFO.linkedin}`, label: t.hero.linkedin, Icon: Linkedin },
-    { href: `https://${CONTACT_INFO.github}`, label: t.hero.github, Icon: Github },
-    { href: `https://${CONTACT_INFO.blog}`, label: t.hero.blog, Icon: BookOpen },
+    { href: `https://${CONTACT_INFO.linkedin}`, label: t.hero.linkedin, Icon: Linkedin, external: true },
+    { href: `https://${CONTACT_INFO.github}`, label: t.hero.github, Icon: Github, external: true },
+    { href: `https://${CONTACT_INFO.blog}`, label: t.hero.blog, Icon: BookOpen, external: true },
+    { href: `mailto:${CONTACT_INFO.email}`, label: CONTACT_INFO.email, Icon: Mail, external: false },
   ];
 
   return (
@@ -77,12 +78,11 @@ const Hero: React.FC = () => {
 
         {/* Social links */}
         <div className="mt-8 flex flex-wrap items-center gap-2.5">
-          {socials.map(({ href, label, Icon }) => (
+          {socials.map(({ href, label, Icon, external }) => (
             <a
               key={label}
               href={href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               className="chip hover:text-ink hover:border-hairline-strong transition-colors"
             >
               <Icon size={13} strokeWidth={2} aria-hidden="true" />
