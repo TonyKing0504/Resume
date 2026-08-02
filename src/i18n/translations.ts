@@ -119,7 +119,7 @@ export const translations: Record<Language, TranslationContent> = {
       name: 'Tao (Tony) Jin',
       eyebrow: 'Cornell M.Eng Systems Engineering · Graduating May 2026 · Data Science / Data Analytics',
       description:
-        'I turn raw data into decisions that land on the executive agenda — Python automation, auditable SQL pipelines, and strategy decks that institutional clients actually cite.',
+        'I turn raw data into decisions that land on the executive agenda — auditable SQL pipelines, calibrated machine-learning models, and research that institutional clients actually act on.',
       chips: ["Cornell M.Eng '26", 'UBC Mathematics', 'Available immediately'],
       downloadResume: 'Download Resume',
       viewProjects: 'View Projects',
@@ -261,10 +261,9 @@ export const translations: Record<Language, TranslationContent> = {
           location: 'Shanghai, China',
           period: 'May 2024 – Aug 2024',
           achievements: [
-            'Spearheaded in-depth market research to identify investment trends and presented strategic findings to senior analysts, directly supporting institutional client decision-making.',
-            'Collaborated with cross-functional teams to conduct due diligence and engineered Python-based API tools to automate data entry from cross-referenced databases, improving workflow efficiency.',
-            'Compiled a comprehensive slide deck analyzing the convertible bond market downturn through macroeconomic indicators such as rates and sentiment, helping reduce selloffs by 9%.',
-            'Designed technical marketing materials for a new convertible bond product launch and educated sales teams on key features, contributing to a 4% increase in inquiries and a 12% boost in conversion rates.',
+            'Supported institutional clients’ due diligence on the firm by completing due diligence questionnaires (DDQs), cross-checking internal records to keep responses accurate and consistent.',
+            'Conducted quantitative market research integrating macroeconomic indicators, interest rate trends, and sentiment data; collaborated with senior analysts to deliver analytical reports supporting institutional investment decisions.',
+            'Produced convertible bond downturn analysis and product training materials; contributed to 9% fewer redemptions, 4% more inquiries, and 12% higher conversion rates.',
           ],
         },
         {
@@ -274,10 +273,9 @@ export const translations: Record<Language, TranslationContent> = {
           location: 'Shanghai, China',
           period: 'June 2023 – Aug 2023',
           achievements: [
-            'Advised corporate clients with market caps up to $7.7M USD during pre-IPO stages by performing financial due diligence, analyzing cash flow statements, and rectifying critical discrepancies.',
-            'Refined data collection methodologies for senior analysts, streamlining reporting processes and enhancing operational efficiency by 8%.',
-            'Analyzed portfolio performance by calculating key metrics including Sharpe, Sortino, Beta, and Volatility, then visualized trends against benchmarks with time-series plots.',
-            'Performed systematic risk evaluation and correlation analysis, presenting findings in comprehensive risk management reports to stakeholders.',
+            'Calculated Sharpe, Sortino, Beta, volatility, and correlation metrics; visualized trends against benchmarks in risk management reports supporting internal decisions.',
+            'Performed pre-IPO financial due diligence on a Shanghai main-board applicant (planned fundraising ~RMB 460M), cross-checking a dozen executives’ 3-year bank statements against company ledgers to flag large unexplained transactions.',
+            'Refined data collection, spreadsheet verification, and reporting workflows through close cross-functional collaboration, cutting duplicate entry and improving team operational efficiency by 8%.',
           ],
         },
       ],
@@ -301,14 +299,14 @@ export const translations: Record<Language, TranslationContent> = {
       ],
       toolStackList: [
         { label: 'Data Engineering & Analysis', stack: 'Python, R, SQL', value: 90 },
-        { label: 'Visualization & BI', stack: 'Tableau, D3, Recharts', value: 95 },
+        { label: 'Visualization & BI', stack: 'Tableau, Excel, Matplotlib', value: 95 },
         {
           label: 'Mathematical & Systems',
           stack: 'Stochastic Calculus, Optimization',
           value: 85,
         },
       ],
-      languageList: ['Chinese (Native)', 'English (Professional)', 'Japanese (Basic)'],
+      languageList: ['Chinese (Fluent)', 'English (Proficient)', 'Japanese (Basic)'],
     },
     contact: {
       eyebrow: 'Get in Touch',
@@ -356,7 +354,7 @@ export const translations: Record<Language, TranslationContent> = {
       name: '金韬',
       eyebrow: '康奈尔大学系统工程硕士 · 2026 年 5 月毕业 · 求职方向:数据科学 / 数据分析',
       description:
-        '将业务数据转化为可以落地执行的决策。过往实习中,我独立交付了稳定运行的 Python 自动化工具、可追溯的 SQL 数据流程,以及被机构客户纳入投资判断的研究报告。',
+        '将业务数据转化为可以落地执行的决策。从可追溯的 SQL 分析流程、经过校准的机器学习模型,到支持机构客户投资判断的研究材料,都已在真实业务与项目中交付落地。',
       chips: ['康奈尔 M.Eng 2026 届', 'UBC 数学 本科', '可立即入职'],
       downloadResume: '下载简历',
       viewProjects: '查看项目',
@@ -496,10 +494,9 @@ export const translations: Record<Language, TranslationContent> = {
           location: '中国上海',
           period: '2024 年 5 月 – 2024 年 8 月',
           achievements: [
-            '独立开展市场研究,识别关键投资趋势并整理为研究纪要,向资深分析师汇报研判结论,为机构客户的投资决策提供支持。',
-            '配合跨部门团队完成尽职调查工作,基于 Python 开发 API 工具,实现跨数据库的自动化录入,显著提升研究团队的工作效率。',
-            '围绕可转债市场的下行趋势,综合利率、市场情绪等宏观指标撰写系统性研究报告,协助机构客户将抛售压力降低 9%。',
-            '为新发可转债产品设计技术营销材料,并组织销售团队进行产品培训,推动产品咨询量提升 4%、客户转化率提升 12%。',
+            '配合机构客户对公司的尽职调查,负责各类尽调问卷(DDQ)的填写与数据核对,确保答复口径一致。',
+            '整合宏观指标、利率走势与市场情绪数据,输出可转债市场分析和产品培训材料,支持机构客户投资沟通并推动赎回率下降 9%、咨询量提升 4%、转化率提升 12%。',
+            '将研究结论整理为面向销售团队和客户沟通的材料,提升复杂金融产品信息传达效率,并支持资深分析师形成投资观点。',
           ],
         },
         {
@@ -509,10 +506,9 @@ export const translations: Record<Language, TranslationContent> = {
           location: '中国上海',
           period: '2023 年 6 月 – 2023 年 8 月',
           achievements: [
-            '在 Pre-IPO 阶段协助企业客户(最高市值约 770 万美元)完成财务尽职调查及现金流量分析,及时识别并修正关键差异。',
-            '优化资深分析师的数据采集流程,简化报告环节,团队整体运营效率提升约 8%。',
-            '通过计算夏普比率、索提诺比率、Beta 系数及波动率等关键指标分析投资组合表现,并以时间序列图对标基准进行可视化呈现。',
-            '系统地开展风险评估与相关性分析,撰写完整的风险管理报告并向相关方汇报分析结论。',
+            '计算 Sharpe、Sortino、Beta、波动率与相关性指标,形成组合绩效与风险管理报告,支持内部决策。',
+            '对拟募资约 4.6 亿元的沪主板申报企业开展财务尽职调查,交叉核查十余名高管三年期银行流水与公司账目,筛查大额异常往来并形成待落实清单。',
+            '优化数据采集、表格核验和报告汇总流程,减少重复录入与交叉核对成本,推动团队作业效率提升 8%。',
           ],
         },
       ],
@@ -536,10 +532,10 @@ export const translations: Record<Language, TranslationContent> = {
       ],
       toolStackList: [
         { label: '数据工程与分析', stack: 'Python, R, SQL', value: 90 },
-        { label: '可视化与 BI', stack: 'Tableau, D3, Recharts', value: 95 },
+        { label: '可视化与 BI', stack: 'Tableau, Excel, Matplotlib', value: 95 },
         { label: '数学与系统建模', stack: '随机分析、最优化', value: 85 },
       ],
-      languageList: ['中文(母语)', '英语(专业水平)', '日语(基础)'],
+      languageList: ['中文(母语)', '英文(专业工作水平)', '日语(基础)'],
     },
     contact: {
       eyebrow: '联系我',
