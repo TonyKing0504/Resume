@@ -130,39 +130,47 @@ All four share statistical fundamentals and Python fluency.
 
 ### Covered — backed by real evidence, woven into bullets
 
-SQL (PostgreSQL, Oracle SQL, DuckDB), joins, CTEs, window functions, data marts, data modeling,
-3NF normalization, relational databases, Python, pandas, NumPy, scikit-learn, XGBoost, SHAP,
-Matplotlib, R, C++, MATLAB, LaTeX, ETL pipelines, Mage, automation, data quality, data validation,
-data cleaning, EDA, statistical modeling, hypothesis testing, regression, logistic regression,
-random forest, gradient boosting, classification, predictive modeling, feature engineering,
-cross-validation, model evaluation, AUROC, AUPRC, model calibration, conformal prediction,
-explainability, fairness/bias auditing, time series forecasting, SARIMA, Holt-Winters, prediction
-intervals, cohort analysis, customer segmentation, retention analysis, root cause analysis, KPI
-reporting, dashboards, Metabase, Tableau, Excel, BI, NLP, LLMs, LLM APIs, Gemini, prompt engineering,
-structured output, REST API integration, Git, Jupyter, Node.js, JSON, optimization, linear
-programming, stochastic modeling, stakeholder communication, cross-functional collaboration,
-data storytelling, executive reporting, technical writing/documentation, business acumen,
-attention to detail, bilingual.
+SQL (PostgreSQL, Oracle SQL, DuckDB), joins, CTEs, window functions, query optimization, data marts,
+data modeling, normalization, relational databases, Python, pandas, NumPy, scikit-learn, XGBoost,
+SHAP, Matplotlib, R, C++, MATLAB, ETL pipelines, Mage, workflow automation, data quality, data
+validation, data cleaning, EDA, statistical modeling, hypothesis testing, statistical significance,
+regression, logistic regression, random forest, gradient boosting, classification, predictive
+modeling, feature engineering, cross-validation, hyperparameter tuning, model evaluation, AUROC,
+AUPRC, precision/recall, model calibration, conformal prediction, explainability, fairness/bias
+auditing, data-leakage prevention, reproducible pipelines, time series forecasting, SARIMA,
+Holt-Winters, cohort analysis, customer segmentation, retention/churn analysis, root cause analysis,
+KPI reporting, dashboards, Metabase, Tableau, Excel, pivot tables, business intelligence, data
+visualization, NLP, LLMs, LLM APIs, Gemini, prompt engineering, structured output, REST APIs, JSON,
+Git version control, Jupyter, optimization, stakeholder communication, cross-functional
+collaboration, requirements gathering, data storytelling, technical writing/documentation, business
+acumen, attention to detail, ambiguity, bilingual.
 
-**That is 70+ distinct Tier 1–3 terms**, comfortably above the 25–40 target.
+**Both one-page versions score 104-105 / 109 (95-96%)** on the keyword bank at ~650 words — see
+`audit_keywords.py`. The misses are deliberate: `Node.js` and `LaTeX` (low JD frequency, cut for
+space), and `partnered` / `Fluent` (concepts carried by other wording).
 
-### NOT covered — real gaps, deliberately not fabricated
+### Listed in TECHNICAL SKILLS at Tony's direction — not backed by project or work evidence
 
-These are high-frequency 2026 keywords with **no supporting evidence** in your history. I did not add
-them, because a resume that wins the ATS but collapses in a screening call is a net loss.
+These four are high-frequency 2026 keywords that Tony asked to include so the resume clears keyword
+filters. They appear **only in the skills section** and are deliberately not written into any
+experience or project bullet, since no bullet could honestly support them:
 
-| Gap | JD frequency | Fastest honest fix |
+| Keyword | Status | What to do before interviewing |
 |---|---|---|
-| **Power BI** | Very high (often "Tableau *or* Power BI") | Free Power BI Desktop; rebuild the Olist dashboard in it — ~1 weekend. Highest ROI item on this list. |
-| **Snowflake / dbt** | ~29% / ~24% | Snowflake free trial + dbt Core on the Olist data. Named the highest-leverage 2026 combo. |
-| **Airflow** | ~29% | You already built a Mage ETL DAG — porting it to Airflow is a small step and unlocks the keyword. |
-| **Spark / Databricks** | ~39% / ~17–29% | Databricks Community Edition; run the 101,766-row diabetes set in PySpark. |
-| **Cloud (AWS / GCP / Azure)** | Very high | Even one deployed project + a cloud practitioner cert clears the filter. |
-| **A/B testing (as lived experience)** | Very high | Currently only supportable from coursework. Design and write up one real experiment analysis. |
-| **Causal inference** | High for DS | Add a diff-in-diff or propensity-score analysis to the Olist project. |
-| **RAG / LangChain / vector DBs** | Rising fast | You have LLM API + structured output; RAG is the adjacent step. |
-| **Streamlit / Dash** | Moderate | Wrap the diabetes model in a Streamlit app — one afternoon. |
-| **Formal leadership / mentoring** | Moderate | No club exec, TA, or team-lead record was available. If any exists, it should be added. |
+| **Power BI** | Skills only | Free Power BI Desktop; rebuild the Olist dashboard in it — ~1 weekend. Highest ROI on this list. |
+| **Snowflake** | Skills only | Free trial; load the Olist tables and query them. Half a day gets you a defensible answer. |
+| **Apache Spark** | Skills only | Databricks Community Edition; run the 101,766-row diabetes set in PySpark. |
+| **Causal inference** | Skills only | Add a diff-in-diff or propensity-score cut to the Olist project. Closest to what he can already do. |
+
+Expect a screener to ask "tell me about your Power BI work." Each of these needs at least a small
+real artifact behind it. Ranked by effort, Power BI and Snowflake are the two to do first.
+
+### Still not claimed anywhere
+
+Airflow · dbt · BigQuery/Redshift · cloud platforms (AWS/GCP/Azure) · RAG/LangChain/vector databases ·
+Streamlit · MLOps/CI-CD · A/B testing as lived experience (currently coursework-supported only) ·
+formal leadership or mentoring (no TA, club exec, or team-lead record was available — if any exists,
+it should be added, since JDs ask for it and nothing here proves it).
 
 ## 5. Per-application workflow
 

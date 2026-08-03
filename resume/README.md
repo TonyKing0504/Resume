@@ -1,8 +1,11 @@
-# ATS-Optimized Resumes — 2026 North America Data Analyst / Data Scientist
+# ATS-Optimized One-Page Resumes — 2026 North America Data Analyst / Data Scientist
 
-Two keyword-maximized resume versions built against 2026 North America job-description research.
-Both are 2 pages, single column, and score **105/105 (100%)** on the Tier 1–3 and soft-skill keyword
-bank in [`JD_KEYWORD_RESEARCH.md`](./JD_KEYWORD_RESEARCH.md).
+Two one-page, keyword-maximized resume versions built against 2026 North America job-description
+research, formatted to match `public/Cornell_Tao_Jin.docx`.
+
+Both score **104–105 / 109 (95–96%)** on the keyword bank in
+[`JD_KEYWORD_RESEARCH.md`](./JD_KEYWORD_RESEARCH.md) at ~650 words — up from 89% density on the
+earlier two-page draft.
 
 ## Files
 
@@ -10,107 +13,110 @@ bank in [`JD_KEYWORD_RESEARCH.md`](./JD_KEYWORD_RESEARCH.md).
 |---|---|
 | `Tao_Jin_Resume_DataAnalyst_ATS.pdf` / `.docx` | Data Analyst · Business Analyst · BI Analyst · Product Analyst |
 | `Tao_Jin_Resume_DataScientist_ATS.pdf` / `.docx` | Data Scientist · Applied Scientist · ML / Decision Scientist |
-| `*.md` | Plain-text source for each version — edit here, then rebuild |
-| `JD_KEYWORD_RESEARCH.md` | The keyword bank, frequency tiers, gap list, and per-application workflow |
-| `build_resumes.js` | Regenerates both `.docx` + `.md` from one data source |
+| `*.md` | Plain-text mirror of each version |
+| `JD_KEYWORD_RESEARCH.md` | Keyword bank, frequency tiers, gap list, per-application workflow |
+| `build_resumes.cjs` | Generates both `.docx` and both `.md` from one data source |
 | `audit_keywords.py` | Scores a PDF against the keyword bank |
 
 **Submit the PDF by default; use the DOCX only when a posting explicitly asks for Word.**
 
-## Which version to send
+## Formatting — matched to the original resume
 
-2026 Data Scientist postings cluster into four archetypes:
+Lifted from `public/Cornell_Tao_Jin.docx` so these look like the same person's resume:
+
+| Element | Setting |
+|---|---|
+| Font | **Cambria** (the original file's theme minor font) |
+| Name | 20pt bold, centered |
+| Section headings | 11pt bold, all caps, bottom rule |
+| Organization / project title | 10.5pt bold, right-tabbed location or date |
+| Role line | 10.5pt italic |
+| Bullets | 9pt, literal `•`, hanging indent |
+| Page | US Letter, single column |
+
+Two deliberate departures, both needed to fit one page with this much content:
+
+- **Body text 9pt** instead of 9.5pt
+- **Margins 0.36in top/bottom, 0.46in sides** instead of 0.51in / 0.71in, and leading at 0.83
+
+Section order also matches the original — Education, Experience, Projects, Skills — with no
+professional summary. The Data Scientist version puts Projects before Experience, since its modeling
+work is the stronger signal for that role.
+
+## Which version to send
 
 | Posting emphasis | Send |
 |---|---|
-| SQL, dbt, dashboards, KPIs, experimentation | **Data Analyst** |
+| SQL, dashboards, KPIs, reporting, experimentation | **Data Analyst** |
 | Causal inference, A/B testing at scale | **Data Scientist** |
 | Production model development | **Data Scientist** |
-| LLM evals, RAG, agents | **Data Scientist** (move the Kaggle LLM project first) |
+| LLM evals, RAG, agents | **Data Scientist** (Kaggle LLM project is already first) |
 
 ## How the keywords are distributed
 
-Keywords appear **in context** — attached to a metric or a decision — not only in the skills block.
-That is what 2026 ATS contextual-relevance scoring rewards and what keyword-stuffing detection
-punishes. Examples:
+The skills block carries terms that do **not** already appear in a bullet; the bullets carry the
+rest, each attached to a metric or a decision. ATS scores keyword *presence*, not frequency, so
+duplicating a term in both places buys nothing and costs space — that principle is what made one page
+possible without dropping keywords.
 
-- *stakeholder communication, non-technical* → Aifuku bullet 3, Grow bullet 3
-- *cross-functional collaboration* → Aifuku bullet 1, Sinolink bullet 3
-- *technical writing / documentation* → "Authored", "documented", "standardized and documented"
-- *data storytelling* → Grow bullet 3
-- *business acumen / data-driven decisions* → Olist recommendation scorecard bullets
-- *attention to detail* → Sinolink due diligence bullet
-- *ambiguity* → summary line, "translating ambiguous business questions"
-- *ETL, LLM, prompt engineering* → Aifuku Mage pipeline bullet
-- *A/B testing, experimental design* → skills + UBC Statistical Inference coursework
+Soft skills use JD phrasing and live in bullets, not just the skills row:
 
-## Verify before you send
+- *stakeholder communication, non-technical* → Aifuku bullet 2 ("presented findings and
+  recommendations cross-functionally to non-technical stakeholders")
+- *technical writing / documentation* → "Built and documented…", "Authored…"
+- *data storytelling* → Grow bullet 2
+- *business acumen / data-driven decisions* → Olist scorecard bullet
+- *attention to detail* → Sinolink bullet
+- *cross-functional collaboration* → Aifuku, Sinolink
 
-These phrases are reasonable readings of your existing material, but confirm each is one you can
-defend in an interview. Edit the `.md` and rebuild if any is off:
+## Read before you send
 
-1. **Sinolink** — "standardized and documented the workflow for team reuse." Inferred from "refined
-   data collection, spreadsheet verification, and reporting workflows." Drop the clause if no
-   written artifact exists.
-2. **Diabetes project** — "cross-validation and hyperparameter tuning" and "documented methodology
-   and limitations in a technical report." Standard for a benchmarking course project; confirm both.
-3. **Olist** — listed as producing an "Excel dashboard." Confirm the dashboard artifact exists.
-4. **Tableau** — carried over from your existing resume's skills list. Be ready for a Tableau
-   question, or move it behind Excel/Metabase.
-5. **A/B testing and experimental design** — currently supported by coursework, not by a shipped
-   experiment. It is truthful as a skill; it is the first thing to convert into real project
-   evidence (see gap list).
-6. **Grow Investment Group** — job title kept exactly as on your existing resume
-   ("Institutional Sales Department Intern"). 2026 ATS increasingly cross-references titles against
-   LinkedIn, so keep LinkedIn identical.
+**Four skills are listed without supporting evidence, at your request:** Power BI, Snowflake, Apache
+Spark, and causal inference. They appear only in TECHNICAL SKILLS and are deliberately kept out of
+every bullet. A screener who sees them may ask about them. Section 4 of the research doc ranks the
+fastest way to put a real artifact behind each — Power BI and Snowflake are the two worth doing
+first, roughly a weekend and half a day.
 
-## Gaps deliberately not claimed
+Also confirm these readings of your existing material:
 
-High-frequency 2026 keywords with no supporting evidence in your history — omitted on purpose,
-because a resume that clears the ATS but collapses in the screening call is a net loss. Ranked by
-return on effort:
+1. **Sinolink** — "redesigned reporting workflows" is inferred from "refined data collection and
+   reporting methodologies."
+2. **Diabetes project** — "cross-validation and hyperparameter tuning" is assumed standard for a
+   benchmarking project.
+3. **Olist** — listed with an Excel dashboard; confirm the artifact exists.
+4. **Tableau** — carried over from your existing skills list.
+5. **A/B testing / experimental design** — supported by coursework, not by a shipped experiment.
+6. **Grow Investment Group** — title kept exactly as on your existing resume. 2026 ATS cross-checks
+   titles against LinkedIn, so keep LinkedIn identical.
 
-1. **Power BI** — very high JD frequency, ~1 weekend. Rebuild the Olist dashboard in Power BI Desktop.
-2. **Cloud (AWS / GCP / Azure)** — one deployed project plus a practitioner cert clears the filter.
-3. **Snowflake + dbt** — named the highest-leverage 2026 combination; free tiers cover it.
-4. **Airflow** — you already built a Mage ETL DAG; porting it is a short step.
-5. **A/B testing as lived experience** — design, run, and write up one real experiment analysis.
-6. **Spark / Databricks** — Community Edition; run the 101,766-row diabetes set in PySpark.
-7. **Causal inference** — add a diff-in-diff or propensity-score cut to the Olist project.
-8. **RAG / LangChain / vector databases** — the adjacent step from your existing LLM API work.
-9. **Streamlit** — wrap the diabetes model in an app; one afternoon.
-10. **Formal leadership / mentoring** — no TA, club exec, or team-lead record was available. If any
-    exists, add it; JDs ask for it and nothing here currently proves it.
+Not claimed anywhere: Airflow, dbt, BigQuery, cloud platforms, RAG/LangChain, Streamlit, MLOps, and
+any formal leadership or mentoring record.
 
 ## Per-application tailoring
 
 1. Highlight every tool, method, and metric noun in the JD.
 2. Pick the version using the table above.
-3. Swap in the JD's exact vocabulary wherever you have a true equivalent — 2026 ATS does not
-   reliably resolve synonyms, so mirror their wording (if they say "experimentation," write
-   "experimentation").
-4. Move the JD's top three tools into the first Technical Skills line.
-5. Reorder projects so the most relevant one is first.
-6. Match the summary's opening job title to the posting's exact title.
+3. Swap in the JD's exact vocabulary where you have a true equivalent — 2026 ATS does not reliably
+   resolve synonyms.
+4. Move the JD's top three tools to the front of the first skills row.
+5. Reorder projects so the most relevant is first.
 
 ## Rebuilding
 
-Edit `build_resumes.js` (single source of truth for both versions), then:
+`build_resumes.cjs` is the single source of truth for both versions. It is `.cjs` because the repo's
+`package.json` sets `"type": "module"`.
 
 ```bash
-npm install docx          # once
-node build_resumes.js     # writes both .docx and both .md
+npm install docx
+node build_resumes.cjs                    # writes both .docx and both .md
 soffice --headless --convert-to pdf --outdir . *.docx
 python3 audit_keywords.py *.pdf
 ```
 
-Note: `audit_keywords.py` reads the PDF, where a hyphenated term can wrap across a line break and
-read as two tokens. If a keyword shows as missing there, check the `.docx` text before assuming it
-is absent.
+`RESUME_LINE` overrides the leading (240 = single spacing; default 200). Raise it if you cut content
+and want more air; lower it if an edit pushes the page over. Always re-check the page count after
+editing — both versions currently fill the page with no slack.
 
-## Formatting rules applied
-
-Single column · no tables, text boxes, columns, icons, graphics, headers, or footers · standard
-section headings · Calibri 10pt body / 15pt name · 0.5in side margins · acronyms given with their
-spelled-out forms on first use (EDA, ETL, LLM, NLP, BI, DDQ) · `keepNext` so no entry header strands
-at a page break · 2 pages.
+Note: `audit_keywords.py` reads PDFs, where a hyphenated term can wrap across a line break and read
+as two tokens. If a keyword shows as missing there, check the `.docx` text before assuming it is
+absent.

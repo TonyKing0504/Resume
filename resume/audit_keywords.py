@@ -15,6 +15,7 @@ TIERS = {
   "Natural Language Processing","NLP","calibration","conformal","SHAP","explainability",
   "fairness","bias auditing","REST API","optimization","linear programming","PostgreSQL",
   "Oracle SQL","DuckDB","Metabase","JSON","Node.js","MATLAB","LaTeX","C++"],
+"Requested (skills-only, unevidenced)": ["Power BI","Snowflake","Spark","causal inference"],
 "Soft": ["communication","collaboration","presenting","presented","translating","authored",
   "technical writing","attention to detail","ambiguity","requirements gathering","partnered",
   "recommendations","stakeholders","decision","training materials","documented","Fluent"],
