@@ -14,6 +14,7 @@ earlier two-page draft.
 | `Tao_Jin_Resume_DataAnalyst_ATS.pdf` / `.docx` | Data Analyst · Business Analyst · BI Analyst · Product Analyst |
 | `Tao_Jin_Resume_DataScientist_ATS.pdf` / `.docx` | Data Scientist · Applied Scientist · ML / Decision Scientist |
 | `Tao_Jin_Resume_RiskAnalyst.pdf` / `.docx` | Risk Analyst · Exposure Management · Insurance / Reinsurance analytics |
+| `Tao_Jin_Resume_MarketResearch.pdf` / `.docx` | Market Research Associate / Analyst · asset management & financial services |
 | `*.md` | Plain-text mirror of each version |
 | `JD_KEYWORD_RESEARCH.md` | Keyword bank, frequency tiers, gap list, per-application workflow |
 | `build_resumes.cjs` | Generates both `.docx` and both `.md` from one data source |
@@ -50,6 +51,7 @@ work is the stronger signal for that role.
 |---|---|
 | SQL, dashboards, KPIs, reporting, experimentation | **Data Analyst** |
 | Risk, exposure, ERM, insurance / reinsurance | **Risk Analyst** |
+| Market/competitive research, survey work, investor or advisor insights | **Market Research** |
 | Causal inference, A/B testing at scale | **Data Scientist** |
 | Production model development | **Data Scientist** |
 | LLM evals, RAG, agents | **Data Scientist** (Kaggle LLM project is already first) |
@@ -78,6 +80,33 @@ insurance/reinsurance and enterprise-risk roles. Same facts as the other two, re
 It scores **37/38** on the transferable terms in that JD. Nothing insurance-specific is claimed:
 no catastrophe modeling, no Moody's RMS or Verisk AIR, no reinsurance product knowledge, no ERM, no
 accumulation management. Those are real gaps, and the resume does not paper over them.
+
+## The Market Research version
+
+Built for Fidelity Canada *Market Research Associate* (Toronto, J70609).
+
+**Caveat on sourcing:** the J70609 posting could not be retrieved — Workday and the job aggregators
+are blocked by the build environment's network policy, and the page is not search-indexed. This
+version is built from the sibling posting on the same team, *Market Research Analyst* (J64794),
+reporting to the same Director, Research. Re-check it against the real posting before sending.
+
+The angle: **Grow Investment Group is the flagship.** Quantitative market research inside an asset
+manager, feeding product positioning and business development, is this job one market over — and
+asset-management domain knowledge is the differentiator a generic analytics candidate does not have.
+Hence the `Industry Knowledge` skills row, which the other versions do not carry.
+
+- The marketplace project becomes **demand, segmentation, and satisfaction research**
+- The Kaggle pipeline becomes **secondary-source synthesis** — 107 publications into structured data,
+  which is what "synthesizing qualitative and quantitative data" looks like at scale
+- The modeling project is cut back to one bullet; it is the least relevant here
+- Summary mirrors the posting's own phrase, "a natural communicator with a strong analytical
+  foundation and innate curiosity"
+
+Scores **35/35** on the sibling posting's terms. Not claimed: questionnaire design, Qualtrics, SPSS
+or any survey platform, focus-group moderation. Those are the real gaps for this role.
+
+**Hard gate:** Fidelity Canada postings state that current work authorization for Canada is required.
+Confirm status before applying.
 
 ## How the keywords are distributed
 

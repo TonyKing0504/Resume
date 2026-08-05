@@ -313,6 +313,125 @@ const RISK = {
   ],
 };
 
+// --------------------------------------------------- market research cut
+//
+// Targeted at Fidelity Canada, Market Research Associate (Toronto, J70609).
+// The J70609 posting itself could not be retrieved — Workday and the job
+// aggregators are blocked by this environment's network policy and the page is
+// not indexed. Built instead from the sibling posting on the same team,
+// Market Research Analyst (J64794), which reports to the same Director,
+// Research: primary research (questionnaire design, sampling, data collection,
+// analysis), secondary research for demand analysis and competitive
+// positioning, synthesising qualitative and quantitative data, research reports
+// and dashboards for stakeholders, and strategic project management. Re-check
+// against the real posting before sending.
+//
+// The angle: Grow Investment Group is the flagship. Quantitative market
+// research inside an asset manager, feeding product positioning and business
+// development, is exactly this job one market over — and asset-management
+// domain knowledge is the differentiator a generic analytics candidate lacks.
+//
+// Not claimed: questionnaire design, Qualtrics/SPSS or any survey platform,
+// moderating qualitative research. Those are real gaps.
+
+const MARKET_RESEARCH = {
+  file: 'Tao_Jin_Resume_MarketResearch.docx',
+  targetRole: 'Market Research Associate / Analyst — asset management & financial services',
+  contact: ['Ithaca, NY — open to Toronto, ON (hybrid) | 551-405-1324 | jtonyking@hotmail.com',
+    'linkedin.com/in/tao-tony-jin-ab771426a | github.com/TonyKing0504'],
+  summary: 'Quantitative researcher with a Cornell M.Eng. in Systems Engineering and a UBC B.Sc. in '
+    + 'Mathematics, and three internships inside asset management and capital markets — including '
+    + 'quantitative market research at a Shanghai asset manager whose findings supported product '
+    + 'positioning, business development, and client-facing thought leadership. Pairs sophisticated data '
+    + 'analysis in SQL, Python, R, and '
+    + 'Excel with the writing, visualization, and presentation needed to turn qualitative and '
+    + 'quantitative sources into insights senior stakeholders act on. A natural communicator with a strong '
+    + 'analytical foundation and genuine curiosity; bilingual in Mandarin and English.',
+  education: [
+    { school: 'Cornell University', location: 'Ithaca, NY',
+      degree: 'Master of Engineering in Systems Engineering', date: 'Sep. 2025 – May 2026' },
+    { school: 'University of British Columbia', location: 'Vancouver, BC',
+      degree: 'Bachelor of Science: Major in Mathematics', date: 'Sep. 2021 – June 2025',
+      courses: 'Relevant Coursework: Statistical Inference & Hypothesis Testing (sampling, estimation), '
+        + 'Statistical Learning, Time Series Analysis, Stochastic Calculus, Optimization, Relational '
+        + 'Databases.' },
+  ],
+  experience: [
+    { org: 'Aifuku', location: 'Toronto, ON', role: 'Data Science Intern', date: 'Jan. 2025 – May 2025',
+      bullets: [
+        'Built the reporting layer operations stakeholders relied on: wrote SQL (joins, '
+          + 'CTEs, window functions) across a 9-table source-of-truth database, validated order, receipt, '
+          + 'inventory, and ledger data, and maintained Metabase dashboards and KPI reports.',
+        'Analyzed 5 linked data sets, independently root-caused data-quality issues, and presented '
+          + 'findings and recommendations to non-technical stakeholders; automated a document-parsing '
+          + 'pipeline that replaced manual data collection.',
+      ] },
+    { org: 'Grow Investment Group', location: 'Shanghai, China',
+      role: 'Institutional Sales Department Intern', date: 'May 2024 – Aug. 2024',
+      bullets: [
+        'Conducted quantitative market research for an asset manager’s institutional business, '
+          + 'integrating macroeconomic indicators, interest rate trends, and market sentiment data, and '
+          + 'authored written research reports that informed institutional investment and positioning '
+          + 'decisions.',
+        'Produced a convertible bond market downturn analysis and product education materials that '
+          + 'translated research findings into a clear narrative for client-facing teams; the program '
+          + 'contributed to 9% fewer client redemptions, 4% more inquiries, and 12% higher conversion.',
+        'Completed institutional client due diligence questionnaires (DDQs), cross-referencing '
+          + 'multi-source databases with Python automation and systematic validation to keep disclosures '
+          + 'accurate, cutting manual data processing 15%.',
+      ] },
+    { org: 'Sinolink Securities Co., Ltd.', location: 'Shanghai, China',
+      role: 'Investment Banking Intern', date: 'June 2023 – Aug. 2023',
+      bullets: [
+        'Researched pre-IPO issuers and calculated portfolio risk and performance metrics (Sharpe, '
+          + 'Sortino, Beta, volatility, correlation), benchmarking against market indices and presenting '
+          + 'results in reports for internal decision-makers.',
+      ] },
+  ],
+  projects: [
+    { title: 'Marketplace Demand, Segmentation & Satisfaction Research', tech: 'SQL (DuckDB), Excel',
+      date: '',
+      bullets: [
+        'Analyzed 99,441 transactions to size demand and segment customers, quantifying a 3.0% '
+          + 'repeat-purchase rate, a BRL 7.98M single-purchase segment, and an 8.1% late-delivery rate tied '
+          + 'to materially weaker satisfaction ratings; synthesized findings into an executive scorecard '
+          + 'with prioritized recommendations.',
+      ] },
+    { title: 'Secondary-Source Synthesis Pipeline (Kaggle)', tech: 'Python, NLP, LLM APIs',
+      date: 'Jan.–Mar. 2026',
+      bullets: [
+        'Synthesized unstructured text from 107 publications into a structured 71-category dataset '
+          + 'covering 1,659 records, benchmarking rule-based against LLM extraction and root-causing a '
+          + '0.575 validation-test performance gap.',
+      ] },
+    { title: 'Predictive Modeling & Model Validation', tech: 'Python, scikit-learn, XGBoost',
+      date: 'Sep.–Dec. 2025',
+      bullets: [
+        'Benchmarked logistic regression, random forest, gradient boosting, and XGBoost over 101,766 '
+          + 'records with cross-validation, then recalibrated and validated the selected model and ran '
+          + 'driver attribution to explain the result.',
+      ] },
+  ],
+  skills: [
+    ['Research Methods', 'Quantitative and qualitative analysis, statistical sampling and inference, '
+      + 'hypothesis testing, segmentation, demand analysis, cohort and retention analysis, satisfaction '
+      + 'and rating data analysis, competitive and secondary research, trend and time series analysis, '
+      + 'statistical modeling, regression'],
+    ['Analysis & Presentation', 'Microsoft Excel (pivot tables, lookups, dashboards), PowerPoint, Word, '
+      + 'Tableau, Power BI, Metabase, data visualization, research reports, executive reporting, '
+      + 'dashboards, data storytelling'],
+    ['Data & Programming', 'SQL (PostgreSQL, Oracle SQL, DuckDB — joins, CTEs, window functions, '
+      + 'aggregation), Python (pandas, NumPy, scikit-learn), R, MATLAB; data collection, validation, and '
+      + 'quality assurance; ETL pipelines; Git; Jupyter'],
+    ['Industry Knowledge', 'Asset management and financial services, institutional client and sales '
+      + 'support, macroeconomic and interest rate analysis, market sentiment, convertible bonds, due '
+      + 'diligence questionnaires (DDQs), pre-IPO research'],
+    ['Business & Communication', 'Excellent written and oral communication; presenting to technical and '
+      + 'non-technical stakeholders; translating analysis into actionable insights; strategic project scheduling and stakeholder management; curiosity; attention to detail; managing multiple priorities to '
+      + 'deadline. Languages: Chinese (Native), English (Professional), Japanese (Basic)'],
+  ],
+};
+
 // ------------------------------------------------------------------- assembly
 
 function build(cfg) {
@@ -413,7 +532,7 @@ function toMarkdown(cfg) {
 }
 
 (async () => {
-  for (const cfg of [ANALYST, SCIENTIST, RISK]) {
+  for (const cfg of [ANALYST, SCIENTIST, RISK, MARKET_RESEARCH]) {
     const buf = await Packer.toBuffer(build(cfg));
     fs.writeFileSync(`${__dirname}/${cfg.file}`, buf);
     fs.writeFileSync(`${__dirname}/${cfg.file.replace('.docx', '.md')}`, toMarkdown(cfg) + '\n');
