@@ -13,6 +13,7 @@ earlier two-page draft.
 |---|---|
 | `Tao_Jin_Resume_DataAnalyst_ATS.pdf` / `.docx` | Data Analyst · Business Analyst · BI Analyst · Product Analyst |
 | `Tao_Jin_Resume_DataScientist_ATS.pdf` / `.docx` | Data Scientist · Applied Scientist · ML / Decision Scientist |
+| `Tao_Jin_Resume_RiskAnalyst.pdf` / `.docx` | Risk Analyst · Exposure Management · Insurance / Reinsurance analytics |
 | `*.md` | Plain-text mirror of each version |
 | `JD_KEYWORD_RESEARCH.md` | Keyword bank, frequency tiers, gap list, per-application workflow |
 | `build_resumes.cjs` | Generates both `.docx` and both `.md` from one data source |
@@ -48,9 +49,35 @@ work is the stronger signal for that role.
 | Posting emphasis | Send |
 |---|---|
 | SQL, dashboards, KPIs, reporting, experimentation | **Data Analyst** |
+| Risk, exposure, ERM, insurance / reinsurance | **Risk Analyst** |
 | Causal inference, A/B testing at scale | **Data Scientist** |
 | Production model development | **Data Scientist** |
 | LLM evals, RAG, agents | **Data Scientist** (Kaggle LLM project is already first) |
+
+## The Risk Analyst version
+
+Built for the Everest *Risk Analyst I – Exposure Management* posting and reusable for similar
+insurance/reinsurance and enterprise-risk roles. Same facts as the other two, re-angled:
+
+- **A professional summary is included** — the other two versions have none. This is a pivot
+  application, so the screener needs one line explaining why a maths/engineering candidate belongs in
+  exposure management.
+- **Sinolink leads on risk vocabulary.** Sharpe, Sortino, Beta, volatility, and correlation are real
+  portfolio risk metrics; the bullet now says "calculated and monitored… benchmarking exposures
+  against market indices," which is what the role does, one asset class over.
+- **Aifuku maps to the first JD responsibility** — "prepare, consolidate, validate, and analyze
+  exposure data" is almost word-for-word what he did with order, receipt, inventory, and ledger data.
+- **The readmission model is reframed as model validation** — calibration, uncertainty
+  quantification, driver attribution. That is the vocabulary of model governance, and it is an
+  accurate description of the work.
+- **Olist is reframed as concentration analysis** — revenue concentration and loss-driver
+  quantification, which is the transferable half of accumulation work.
+- **Contact line carries the relocation signal** ("open to Warren, NJ or Toronto, ON") so the hybrid
+  requirement is answered before anyone has to ask.
+
+It scores **37/38** on the transferable terms in that JD. Nothing insurance-specific is claimed:
+no catastrophe modeling, no Moody's RMS or Verisk AIR, no reinsurance product knowledge, no ERM, no
+accumulation management. Those are real gaps, and the resume does not paper over them.
 
 ## How the keywords are distributed
 

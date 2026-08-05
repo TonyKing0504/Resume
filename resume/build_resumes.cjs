@@ -211,6 +211,108 @@ const SCIENTIST = {
   ],
 };
 
+// --------------------------------------------- risk / exposure-management cut
+//
+// Targeted at insurance & reinsurance Risk Analyst / Exposure Management roles
+// (e.g. Everest, Risk Analyst I). Same underlying facts as the other two
+// variants, re-angled: the finance internships lead on risk vocabulary, the
+// modeling project is framed as model validation and uncertainty
+// quantification, and the marketplace project as concentration analysis.
+// A summary is included here because this is a pivot application — the screener
+// needs one line explaining why a maths/engineering candidate fits.
+//
+// Nothing insurance-specific is claimed: no catastrophe modeling, no RMS/AIR,
+// no reinsurance product knowledge, no ERM. Those are real gaps.
+
+const RISK = {
+  file: 'Tao_Jin_Resume_RiskAnalyst.docx',
+  targetRole: 'Risk Analyst / Exposure Management / Insurance & Reinsurance Analytics',
+  contact: ['Ithaca, NY — open to Warren, NJ or Toronto, ON | 551-405-1324 | jtonyking@hotmail.com',
+    'linkedin.com/in/tao-tony-jin-ab771426a | github.com/TonyKing0504'],
+  summary: 'Quantitative analyst with a Cornell M.Eng. in Systems Engineering and a UBC B.Sc. in Mathematics, '
+    + 'plus three internships spanning portfolio risk metrics, financial due diligence, and production '
+    + 'data pipelines. Prepares, validates, and aggregates multi-source data, builds risk reporting for '
+    + 'senior stakeholders, and translates quantitative results into actionable insights. Strong Excel, '
+    + 'SQL, and Python, resolving data-quality issues independently under deadline.',
+  education: [
+    { school: 'Cornell University', location: 'Ithaca, NY',
+      degree: 'Master of Engineering in Systems Engineering', date: 'Sep. 2025 – May 2026' },
+    { school: 'University of British Columbia', location: 'Vancouver, BC',
+      degree: 'Bachelor of Science: Major in Mathematics', date: 'Sep. 2021 – June 2025',
+      courses: 'Relevant Coursework: Statistical Inference & Hypothesis Testing, Time Series Analysis, '
+        + 'Stochastic Calculus, Optimization, Linear Programming, Relational Databases.' },
+  ],
+  experience: [
+    { org: 'Aifuku', location: 'Toronto, ON', role: 'Data Science Intern', date: 'Jan. 2025 – May 2025',
+      bullets: [
+        'Prepared, consolidated, and validated operational data across 9 tables and 4 source systems in a '
+          + 'Postgres source-of-truth database, writing SQL (joins, CTEs, window functions) to reconcile '
+          + 'order, receipt, inventory, and ledger records feeding management dashboards and KPI reporting.',
+        'Assessed data quality across 5 linked entities, independently root-caused reconciliation and schema '
+          + 'issues, and presented findings to non-technical stakeholders; built and documented an automated '
+          + 'ETL pipeline parsing statement documents into structured records, removing manual data entry.',
+      ] },
+    { org: 'Grow Investment Group', location: 'Shanghai, China',
+      role: 'Institutional Sales Department Intern', date: 'May 2024 – Aug. 2024',
+      bullets: [
+        'Completed institutional client due diligence questionnaires (DDQs), cross-referencing multi-source '
+          + 'databases with Python (pandas) automation and systematic validation to keep disclosures accurate, '
+          + 'cutting manual data processing time 15%.',
+        'Conducted quantitative market research on macroeconomic indicators, interest rate trends, and market '
+          + 'sentiment; authored analytical reports and training materials translating findings for '
+          + 'non-technical audiences, contributing to 9% fewer redemptions, 4% more inquiries, and 12% '
+          + 'higher conversion.',
+      ] },
+    { org: 'Sinolink Securities Co., Ltd.', location: 'Shanghai, China',
+      role: 'Investment Banking Intern', date: 'June 2023 – Aug. 2023',
+      bullets: [
+        'Calculated and monitored portfolio risk metrics — Sharpe, Sortino, Beta, volatility, correlation — '
+          + 'benchmarking exposures against market indices and consolidating results into risk management '
+          + 'reports and presentations for decision-makers.',
+        'Performed pre-IPO financial due diligence (planned raise ~RMB 460M), reconciling multi-year bank '
+          + 'statements against ledgers with rigorous attention to detail to escalate unexplained '
+          + 'transactions and disclosure discrepancies; standardized data collection and reporting '
+          + 'workflows with senior analysts, improving team efficiency 8%.',
+      ] },
+  ],
+  projects: [
+    { title: 'Readmission Risk Modeling & Model Validation', tech: 'Python, scikit-learn, XGBoost',
+      date: 'Sep.–Dec. 2025',
+      bullets: [
+        'Built a 160-feature risk model over 101,766 records across 130 sites, benchmarking logistic '
+          + 'regression, random forest, gradient boosting, and XGBoost with cross-validation and '
+          + 'leakage-safe splitting for out-of-sample validity (AUROC 0.668, AUPRC 0.230).',
+        'Validated and recalibrated the selected model, cutting Expected Calibration Error from 0.342 to '
+          + '0.004, quantified uncertainty via conformal prediction at 90.1% coverage, and ran '
+          + 'driver attribution (SHAP) plus subgroup checks, documented in a written report.',
+      ] },
+    { title: 'Portfolio Concentration & Fulfillment Risk Analytics (Olist)', tech: 'SQL (DuckDB), Excel',
+      date: '',
+      bullets: [
+        'Aggregated 99,441 transactions into reusable order-, customer-, and item-level data marts, '
+          + 'controlling for double-counting at the aggregation grain to protect reported revenue and KPI '
+          + 'accuracy; quantified concentration and loss drivers — a BRL 7.98M single-purchase segment, '
+          + '3.0% repeat rate, 8.1% late deliveries tied to weaker satisfaction — in an executive scorecard.',
+      ] },
+  ],
+  skills: [
+    ['Tools & Programming', 'Microsoft Excel (pivot tables, lookups, dashboards), PowerPoint, Word; SQL (PostgreSQL, Oracle SQL, DuckDB — joins, CTEs, window functions, '
+      + 'aggregation); Python (pandas, NumPy, scikit-learn, XGBoost), R, MATLAB, C++, Git, Jupyter'],
+    ['Risk & Quantitative Analytics', 'Portfolio risk metrics (Sharpe, Sortino, Beta, volatility, correlation), applied statistics, '
+      + 'exposure aggregation and concentration analysis, statistical modeling, hypothesis testing, '
+      + 'regression, predictive and risk modeling, model validation and calibration, uncertainty '
+      + 'quantification, time series forecasting (SARIMA, Holt-Winters), optimization'],
+    ['Data & Reporting', 'Data preparation, validation, reconciliation, and quality assurance; ETL '
+      + 'pipelines; management, compliance, and disclosure reporting; dashboards (Tableau, '
+      + 'Power BI, Metabase); KPI reporting; data visualization; ad hoc analysis'],
+    ['Business & Communication', 'Excellent written, verbal, and presentation skills; stakeholder '
+      + 'communication; cross-functional collaboration; translating complex analysis into actionable '
+      + 'insights for senior leadership; prioritizing multiple assignments in a fast-paced environment; '
+      + 'critical thinking; attention to detail. Languages: Chinese (Native), English (Professional), '
+      + 'Japanese (Basic)'],
+  ],
+};
+
 // ------------------------------------------------------------------- assembly
 
 function build(cfg) {
@@ -220,10 +322,15 @@ function build(cfg) {
     alignment: AlignmentType.CENTER, spacing: { after: 20, line: LINE },
     children: [new TextRun({ text: 'TAO (TONY) JIN', bold: true, size: NAME_SZ, font: FONT })],
   }));
-  CONTACT.forEach((line) => kids.push(new Paragraph({
+  (cfg.contact || CONTACT).forEach((line) => kids.push(new Paragraph({
     alignment: AlignmentType.CENTER, spacing: { after: 0, line: LINE },
     children: [new TextRun({ text: line, size: BODY_SZ, font: FONT })],
   })));
+
+  if (cfg.summary) {
+    kids.push(heading('PROFESSIONAL SUMMARY'));
+    kids.push(new Paragraph({ spacing: { after: 0, line: LINE }, children: runs(cfg.summary) }));
+  }
 
   kids.push(heading('EDUCATION'));
   cfg.education.forEach((e) => {
@@ -277,7 +384,8 @@ function build(cfg) {
 // ------------------------------------------------- markdown mirror of the docx
 
 function toMarkdown(cfg) {
-  const L = ['# TAO (TONY) JIN', '', ...CONTACT, '', '> Target role: ' + cfg.targetRole, ''];
+  const L = ['# TAO (TONY) JIN', '', ...(cfg.contact || CONTACT), '', '> Target role: ' + cfg.targetRole, ''];
+  if (cfg.summary) L.push('## PROFESSIONAL SUMMARY', '', cfg.summary, '');
   L.push('## EDUCATION', '');
   cfg.education.forEach((e) => {
     L.push(`**${e.school}** — ${e.location}`, `*${e.degree}* | ${e.date}`, ...(e.courses ? [`- ${e.courses}`] : []), '');
@@ -305,7 +413,7 @@ function toMarkdown(cfg) {
 }
 
 (async () => {
-  for (const cfg of [ANALYST, SCIENTIST]) {
+  for (const cfg of [ANALYST, SCIENTIST, RISK]) {
     const buf = await Packer.toBuffer(build(cfg));
     fs.writeFileSync(`${__dirname}/${cfg.file}`, buf);
     fs.writeFileSync(`${__dirname}/${cfg.file.replace('.docx', '.md')}`, toMarkdown(cfg) + '\n');
