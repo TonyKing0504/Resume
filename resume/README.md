@@ -16,6 +16,7 @@ earlier two-page draft.
 | `Tao_Jin_Resume_RiskAnalyst.pdf` / `.docx` | Risk Analyst · Exposure Management · Insurance / Reinsurance analytics |
 | `Tao_Jin_Resume_MarketResearch.pdf` / `.docx` | Market Research Associate / Analyst · asset management & financial services |
 | `Tao_Jin_Resume_DebtCapitalMarkets.pdf` / `.docx` | Analyst · Debt Capital Markets / investment banking / capital markets |
+| `Tao_Jin_Resume_EnergyMarkets.pdf` / `.docx` | Energy Market Associate · demand response & operations analytics |
 | `*.md` | Plain-text mirror of each version |
 | `JD_KEYWORD_RESEARCH.md` | Keyword bank, frequency tiers, gap list, per-application workflow |
 | `build_resumes.cjs` | Generates both `.docx` and both `.md` from one data source |
@@ -54,6 +55,7 @@ work is the stronger signal for that role.
 | Risk, exposure, ERM, insurance / reinsurance | **Risk Analyst** |
 | Market/competitive research, survey work, investor or advisor insights | **Market Research** |
 | Debt capital markets, investment banking, capital markets | **Debt Capital Markets** |
+| Energy markets, demand response, operations analytics | **Energy Markets** |
 | Causal inference, A/B testing at scale | **Data Scientist** |
 | Production model development | **Data Scientist** |
 | LLM evals, RAG, agents | **Data Scientist** (Kaggle LLM project is already first) |
@@ -146,6 +148,47 @@ than higher — the missing nine are the genuine experience gap, not a keyword o
 years in the financial industry; the record is roughly ten months of internships. TD fills these
 seats mostly from its own summer analyst program or from another bank's IB floor. Apply, but treat it
 as a reach, and confirm Canadian work authorization first.
+
+## The Energy Markets version
+
+Built for Edgecom Energy *Energy Market Associate* (Toronto, hybrid). Full posting text was supplied,
+so no sourcing caveat.
+
+**None of the other five could carry this JD** — measured against a 51-term set built from the
+posting, they land at 25–35% with 0–1 of 20 energy-domain terms. This version reaches **72%**, with
+Analytics & Ops at **15/15**, Working Style at **13/13**, and Education at **3/3**.
+
+The angle: the role is an operations-analytics loop — run a program, analyse performance and dispatch
+data for trends and root causes, turn that into system, workflow and SOP improvements, report to
+customers and management. That loop is the strongest single pattern in this history, so the resume
+leads with it rather than with tools. Every bullet is now shaped as *analysis → action → measured
+result*, which is also the posting's own "self-starter who turns data and event results into
+practical, measurable improvements".
+
+Specific hooks:
+
+- **Aifuku** — "identifying trends and root causes… then turned that analysis into action" mirrors two
+  responsibilities almost verbatim, and statement-to-ledger reconciliation is settlement verification
+  one domain over
+- **Time-series forecasting keeps its real title** (Canadian labour hours) but is positioned for the
+  5CP forecasting backup duty
+- **Olist becomes operational performance and root-cause analysis** — an 8.1% service-failure rate
+  traced to downstream customer impact
+- **Sinolink leads with workflow standardization and documentation**, the SOP half of the job
+
+**Energy-domain terms sit at 6/20, and that is the honest ceiling.** `energy markets`, `IESO`,
+`demand response`, `capacity auction`, `settlement` and `reconciliation` appear — the first four only
+once, in the summary, as a stated *target*, not a claim of experience. Not present anywhere:
+dispatch, interval meter data, electricity, utility/LDC, PJM, AESO, NYISO, coincident peak, 5CP,
+curtailment, enrollment, test events.
+
+**Two required qualifications cannot be met:** 2+ years in energy markets / demand response / the
+electricity sector, and working knowledge of the IESO market and DR settlement. The posting requires
+a cover letter — that is where the gap gets addressed, not in the resume. IESO publishes its Capacity
+Auction rules and DR participation guides publicly; a weekend of study is enough to speak credibly
+about qualification, dispatch, and settlement, and for a Series A team that can outweigh a thin
+incumbent. Note also that Edgecom states it uses AI tools to screen applications, so keyword
+presence matters more here than usual.
 
 ## How the keywords are distributed
 

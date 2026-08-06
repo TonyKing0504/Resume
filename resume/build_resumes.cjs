@@ -551,6 +551,114 @@ const DCM = {
   ],
 };
 
+// ------------------------------------------------- energy markets / DR cut
+//
+// Targeted at Edgecom Energy, Energy Market Associate (Toronto, hybrid). Full
+// posting text supplied by the candidate, so no sourcing caveat here.
+//
+// The role is an operations-analytics loop: run a program, analyse performance
+// and dispatch data for trends and root causes, turn that into system, workflow
+// and SOP improvements, and report to customers and management. That loop is
+// the strongest single pattern in this history, so the resume leads with it
+// rather than with tools.
+//
+// Two required qualifications cannot be met and are not faked: 2+ years in
+// energy markets / demand response / the electricity sector, and working
+// knowledge of IESO market and DR settlement. IESO, demand response and
+// capacity market appear once, in the summary, as a stated target — an
+// intention, not a claim of experience. Nothing else energy-specific appears.
+//
+// Preferred quals that ARE met: SQL, Python and BI tools for reporting
+// automation; engineering degree; strong Excel and analytical skills.
+
+const ENERGY = {
+  file: 'Tao_Jin_Resume_EnergyMarkets.docx',
+  targetRole: 'Energy Market Associate / demand response & operations analytics',
+  contact: ['Ithaca, NY — open to Toronto, ON (hybrid) | 551-405-1324 | jtonyking@hotmail.com',
+    'linkedin.com/in/tao-tony-jin-ab771426a | github.com/TonyKing0504'],
+  summary: 'Systems engineer and analyst who turns operational and time-series data into measurable '
+    + 'operating improvements. Cornell M.Eng. in Systems Engineering and UBC B.Sc. in Mathematics, with '
+    + 'three internships where the analysis led straight to action: root-caused data failures across '
+    + 'linked operational systems and rebuilt the reporting that fixed them, automated reconciliation '
+    + 'and settlement verification against the general ledger, and standardized reporting workflows for '
+    + '8% team efficiency. Fluent in Excel, SQL, and Python for reporting automation; builds SARIMA and '
+    + 'Holt-Winters forecasts with explicit uncertainty; communicates directly with clients and '
+    + 'management. Targeting energy markets — IESO demand response and capacity auction operations.',
+  education: [
+    { school: 'Cornell University', location: 'Ithaca, NY',
+      degree: 'Master of Engineering in Systems Engineering', date: 'Sep. 2025 – May 2026' },
+    { school: 'University of British Columbia', location: 'Vancouver, BC',
+      degree: 'Bachelor of Science: Major in Mathematics', date: 'Sep. 2021 – June 2025',
+      courses: 'Relevant Coursework: Optimization, Linear Programming, Time Series Analysis, Statistical '
+        + 'Inference & Hypothesis Testing, Stochastic Calculus, Relational Databases.' },
+  ],
+  experience: [
+    { org: 'Aifuku', location: 'Toronto, ON', role: 'Data Science Intern', date: 'Jan. 2025 – May 2025',
+      bullets: [
+        'Analyzed operational data across 5 linked entities — receipts, line items, inventory movements, '
+          + 'production batches, and customer orders — identifying trends and root causes of data failures, '
+          + 'then presented findings and recommended fixes to non-technical stakeholders.',
+        'Turned that analysis into action: automated statement-to-ledger reconciliation with a pipeline '
+          + 'that parsed source documents into structured transaction records and verified them against '
+          + 'the general ledger, replacing manual entry; wrote SQL across a 9-table database and '
+          + 'maintained Metabase dashboards and KPI reporting for the operations team.',
+      ] },
+    { org: 'Grow Investment Group', location: 'Shanghai, China',
+      role: 'Institutional Sales Department Intern', date: 'May 2024 – Aug. 2024',
+      bullets: [
+        'Automated cross-referencing of multi-source records in Python to complete institutional client '
+          + 'due diligence questionnaires, maintaining client registration and disclosure data accurately '
+          + 'and on time while cutting manual processing 15%.',
+        'Monitored market conditions and produced written performance and market reports plus '
+          + 'client-facing education materials, owning the customer-communication side of the program; it '
+          + 'contributed to 9% fewer client redemptions, 4% more inquiries, and 12% higher conversion.',
+      ] },
+    { org: 'Sinolink Securities Co., Ltd.', location: 'Shanghai, China',
+      role: 'Investment Banking Intern', date: 'June 2023 – Aug. 2023',
+      bullets: [
+        'Standardized and documented data collection, verification, and reporting workflows with senior '
+          + 'analysts, eliminating duplicate entry and improving team efficiency 8%.',
+        'Reconciled multi-year statements against company ledgers with rigorous attention to detail to '
+          + 'identify and escalate discrepancies, and reported performance and risk metrics to internal '
+          + 'decision-makers.',
+      ] },
+  ],
+  projects: [
+    { title: 'Time-Series Demand Forecasting (Canadian Labour Hours)', tech: 'R, SARIMA, Holt-Winters',
+      date: '',
+      bullets: [
+        'Built and validated seasonal ARIMA and Holt-Winters models on operational time series, tuning by '
+          + 'AIC and reporting 95% prediction intervals so decision-makers could act on forecast '
+          + 'uncertainty, not just the point estimate.',
+      ] },
+    { title: 'Operational Performance & Root-Cause Analysis', tech: 'SQL (DuckDB), Excel', date: '',
+      bullets: [
+        'Analyzed 99,441 transactions to quantify an 8.1% service-failure rate and trace its downstream '
+          + 'impact on customer satisfaction, alongside a BRL 7.98M revenue concentration, and delivered '
+          + 'an executive scorecard prioritizing the fixes.',
+      ] },
+  ],
+  skillsHeading: 'SKILLS',
+  skills: [
+    ['Analysis & Reporting', 'Strong analytical skills across operational, event, and time-series data; '
+      + 'trend analysis; root '
+      + 'cause analysis; performance reporting; settlement and transaction reconciliation and '
+      + 'verification; data validation and quality control; forecasting (SARIMA, Holt-Winters, '
+      + 'prediction intervals); statistical inference and hypothesis testing; regression; optimization '
+      + 'and linear programming'],
+    ['Tools', 'Microsoft Excel (pivot tables, lookups, modeling, large operational datasets), SQL '
+      + '(PostgreSQL, Oracle SQL, DuckDB), Python (pandas, NumPy), R, Power BI, Tableau, Metabase, '
+      + 'BI tools and reporting automation, ETL, Git'],
+    ['Process & Operations', 'Workflow and SOP documentation, process standardization and improvement, '
+      + 'program and registration data maintenance across systems, issue triage and escalation, '
+      + 'cross-functional and partner coordination, customer-facing reporting'],
+    ['Working Style', 'Self-starter who turns data and results into practical, measurable improvements; '
+      + 'clear written and verbal communication including direct customer contact; managing multiple '
+      + 'priorities in a fast-paced environment; comfortable finding solutions in ambiguity. Languages: '
+      + 'Mandarin Chinese (Native), English (Professional), Japanese (Basic)'],
+  ],
+};
+
 // ------------------------------------------------------------------- assembly
 
 function build(cfg) {
@@ -659,7 +767,7 @@ function toMarkdown(cfg) {
 }
 
 (async () => {
-  for (const cfg of [ANALYST, SCIENTIST, RISK, MARKET_RESEARCH, DCM]) {
+  for (const cfg of [ANALYST, SCIENTIST, RISK, MARKET_RESEARCH, DCM, ENERGY]) {
     const buf = await Packer.toBuffer(build(cfg));
     fs.writeFileSync(`${__dirname}/${cfg.file}`, buf);
     fs.writeFileSync(`${__dirname}/${cfg.file.replace('.docx', '.md')}`, toMarkdown(cfg) + '\n');
