@@ -17,6 +17,8 @@ earlier two-page draft.
 | `Tao_Jin_Resume_MarketResearch.pdf` / `.docx` | Market Research Associate / Analyst · asset management & financial services |
 | `Tao_Jin_Resume_DebtCapitalMarkets.pdf` / `.docx` | Analyst · Debt Capital Markets / investment banking / capital markets |
 | `Tao_Jin_Resume_EnergyMarkets.pdf` / `.docx` | Energy Market Associate · demand response & operations analytics |
+| `Cover_Letter_Edgecom_EnergyMarketAssociate.pdf` / `.docx` / `.md` | Cover letter for the Edgecom posting |
+| `build_cover_letter.cjs` | Generates cover letters in the same Cambria house style |
 | `*.md` | Plain-text mirror of each version |
 | `JD_KEYWORD_RESEARCH.md` | Keyword bank, frequency tiers, gap list, per-application workflow |
 | `build_resumes.cjs` | Generates both `.docx` and both `.md` from one data source |
@@ -189,6 +191,30 @@ Auction rules and DR participation guides publicly; a weekend of study is enough
 about qualification, dispatch, and settlement, and for a Series A team that can outweigh a thin
 incumbent. Note also that Edgecom states it uses AI tools to screen applications, so keyword
 presence matters more here than usual.
+
+## The Edgecom cover letter
+
+The Edgecom posting requires a cover letter, and it is the right place for the gap the resume cannot
+close. One page, ~420 words, same Cambria house style as the resumes so the pair reads as a set.
+
+Structure:
+
+1. **Names the approach in the first line** — where I fit and where I don't — so the reader knows
+   nothing is being hidden.
+2. **Leads with the loop the job runs on** (analysis → changed process → number that moved), proved
+   three times with real figures rather than asserted once.
+3. **States the gap plainly and specifically.** Not "limited energy experience" but "I have not run a
+   Capacity Auction obligation," followed by the four operational areas that only come from doing.
+   Naming the failure modes is itself evidence of having read the material.
+4. **Answers the gap with rate of learning, not with a claim of expertise**, and grounds it in a
+   verifiable pattern: three domains entered cold, each taking weeks.
+5. **Closes on two direct hits** — 5CP forecasting is time series, and the preferred SQL/Python/BI
+   qualification is a strength rather than a stretch.
+
+**One sentence in the letter is a factual claim only the candidate can make true:** that he has
+worked through the IESO's Capacity Auction rules and DR participation materials. It must not be sent
+until that is done. The materials are public, and this is the highest-return preparation available
+for this application — it also supplies the specifics for any interview that follows.
 
 ## How the keywords are distributed
 
