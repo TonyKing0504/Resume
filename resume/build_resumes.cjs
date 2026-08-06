@@ -432,6 +432,125 @@ const MARKET_RESEARCH = {
   ],
 };
 
+// ----------------------------------------------- debt capital markets cut
+//
+// Targeted at TD Securities, Analyst — Canadian Debt Capital Markets (FIG),
+// Toronto (R_1503991). That posting could not be retrieved (Workday is blocked
+// by this environment's network policy), so this is built from the US sibling,
+// Analyst, FIG Debt Capital Markets (DCM), TD Securities: undergraduate degree,
+// 2+ years in the financial industry with familiarity of capital markets,
+// accounting and corporate finance; strong financial and analytical skills;
+// MS Excel; laying out nuanced concepts clearly in PowerPoint and Word;
+// specialised knowledge of market data, economic information and industry
+// developments; transactions documented and processed accurately and timely.
+// Re-check against the real posting before sending.
+//
+// This one reads as a finance resume, not a data resume. Experience is grouped
+// by relevance rather than strictly by date: the investment banking and
+// institutional asset management internships lead, and Aifuku follows as
+// additional experience, reframed around ledger and statement reconciliation —
+// which is the accounting familiarity the posting asks for.
+//
+// Not claimed: bond origination or syndication, league tables, credit ratings
+// analysis, Bloomberg, Series 7/79/SIE/63, CSC. All real gaps.
+
+const DCM = {
+  file: 'Tao_Jin_Resume_DebtCapitalMarkets.docx',
+  targetRole: 'Analyst — Debt Capital Markets / Investment Banking / Capital Markets',
+  contact: ['Ithaca, NY — open to Toronto, ON | 551-405-1324 | jtonyking@hotmail.com',
+    'linkedin.com/in/tao-tony-jin-ab771426a | github.com/TonyKing0504'],
+  summary: 'Debt capital markets analyst candidate with investment banking and institutional sales internships '
+    + 'at financial institutions — a securities firm and an asset manager — spanning debt and equity '
+    + 'products, plus a Cornell M.Eng. in Systems Engineering and a UBC B.Sc. in Mathematics. Authored '
+    + 'convertible bond market analysis and macroeconomic and interest rate research used by '
+    + 'client-facing institutional teams; performed pre-IPO issuer due diligence across cash flow '
+    + 'statements and balance sheets; built portfolio risk and performance analytics benchmarked to '
+    + 'market indices. Strong Excel, PowerPoint, and Word for written client materials, with SQL and '
+    + 'Python for market and transaction data. Fluent Mandarin and English.',
+  education: [
+    { school: 'Cornell University', location: 'Ithaca, NY',
+      degree: 'Master of Engineering in Systems Engineering', date: 'Sep. 2025 – May 2026' },
+    { school: 'University of British Columbia', location: 'Vancouver, BC',
+      degree: 'Bachelor of Science: Major in Mathematics', date: 'Sep. 2021 – June 2025',
+      courses: 'Relevant Coursework: Stochastic Calculus, Statistical Inference & Hypothesis Testing, '
+        + 'Time Series Analysis, Optimization, Linear Programming, Statistical Learning.' },
+  ],
+  experienceHeading: 'CAPITAL MARKETS & FINANCE EXPERIENCE',
+  experience: [
+    { org: 'Grow Investment Group', location: 'Shanghai, China',
+      role: 'Institutional Sales Department Intern', date: 'May 2024 – Aug. 2024',
+      bullets: [
+        'Authored a convertible bond market downturn analysis and product education materials for '
+          + 'client-facing institutional sales, laying out the market move and its implications in clear '
+          + 'written form; the program contributed to 9% fewer client redemptions, 4% more inquiries, and '
+          + '12% higher conversion.',
+        'Conducted quantitative market research integrating macroeconomic indicators, interest rate '
+          + 'trends, and market sentiment data, and delivered written research reports supporting '
+          + 'institutional investment decisions.',
+        'Completed institutional client due diligence questionnaires (DDQs), cross-referencing '
+          + 'multi-source records with Python automation and systematic validation to keep disclosures '
+          + 'accurate and timely, cutting manual processing 15%.',
+      ] },
+    { org: 'Sinolink Securities Co., Ltd.', location: 'Shanghai, China',
+      role: 'Investment Banking Intern', date: 'June 2023 – Aug. 2023',
+      bullets: [
+        'Performed pre-IPO financial due diligence for a Shanghai main-board issuer (planned raise ~RMB '
+          + '460M), analyzing cash flow statements and balance sheets and reconciling multi-year bank '
+          + 'statements against company ledgers to identify and escalate disclosure discrepancies.',
+        'Calculated portfolio risk and performance metrics (Sharpe, Sortino, Beta, volatility, '
+          + 'correlation) and benchmarked returns against market indices, presenting results in risk '
+          + 'management reports for internal decision-makers.',
+        'Standardized data collection, verification, and reporting workflows with senior analysts, '
+          + 'keeping transaction records documented accurately and on deadline and improving team '
+          + 'efficiency 8%.',
+      ] },
+  ],
+  experience2Heading: 'ADDITIONAL EXPERIENCE',
+  experience2: [
+    { org: 'Aifuku', location: 'Toronto, ON', role: 'Data Science Intern', date: 'Jan. 2025 – May 2025',
+      bullets: [
+        'Automated reconciliation of bank and credit-card statements against the general ledger, building '
+          + 'a pipeline that parsed statement documents into structured transaction records and replaced '
+          + 'manual entry; wrote SQL across a 9-table database and maintained management dashboards and '
+          + 'KPI reports for operations stakeholders.',
+      ] },
+  ],
+  projectsHeading: 'QUANTITATIVE PROJECTS',
+  projects: [
+    { title: 'Time Series Forecasting & Uncertainty Quantification', tech: 'R, SARIMA, Holt-Winters',
+      date: '',
+      bullets: [
+        'Built and validated seasonal ARIMA and Holt-Winters models, tuning by AIC and reporting 95% '
+          + 'prediction intervals so stakeholders could read forecast uncertainty, not just the point '
+          + 'estimate.',
+      ] },
+    { title: 'Demand & Revenue Concentration Analysis', tech: 'SQL (DuckDB), Excel', date: '',
+      bullets: [
+        'Analyzed 99,441 transactions in SQL to size demand and quantify revenue concentration — a BRL '
+          + '7.98M single-purchase segment and a 3.0% repeat rate — plus an 8.1% service-failure rate tied '
+          + 'to materially weaker satisfaction, delivered as an executive scorecard.',
+      ] },
+  ],
+  skillsHeading: 'SKILLS & TECHNICAL',
+  skills: [
+    ['Capital Markets & Finance', 'Convertible bonds, fixed income and equity products, corporate '
+      + 'finance, macroeconomic and interest rate analysis, market data, market sentiment, market and '
+      + 'industry developments, financial statement analysis (cash flow, balance sheet) and accounting '
+      + 'reconciliation, financial due diligence, pre-IPO issuer diligence, regulatory disclosure and due '
+      + 'diligence questionnaires (DDQs), portfolio risk and performance metrics (Sharpe, Sortino, Beta, '
+      + 'volatility, correlation), benchmarking to market indices'],
+    ['Software', 'Microsoft Excel (pivot tables, lookups, modeling), PowerPoint, Word; SQL (PostgreSQL, '
+      + 'Oracle SQL, DuckDB); Python (pandas, NumPy); R; MATLAB; Tableau; Power BI'],
+    ['Quantitative Methods', 'Statistical inference and hypothesis testing, regression, time series '
+      + 'analysis and forecasting (SARIMA, Holt-Winters), stochastic calculus, optimization and linear '
+      + 'programming, statistical modeling, data validation and quality control'],
+    ['Professional', 'Written and verbal communication; preparing written materials and client '
+      + 'presentations for client-facing teams; accurate and timely documentation; attention to detail; managing '
+      + 'multiple deadlines in a fast-paced environment; client and stakeholder support. Languages: '
+      + 'Mandarin Chinese (Native), English (Professional), Japanese (Basic)'],
+  ],
+};
+
 // ------------------------------------------------------------------- assembly
 
 function build(cfg) {
@@ -458,16 +577,20 @@ function build(cfg) {
     if (e.courses) kids.push(bullet(e.courses));
   });
 
-  const renderExperience = () => {
-    kids.push(heading('PROFESSIONAL EXPERIENCE'));
-    cfg.experience.forEach((j) => {
+  const renderJobs = (jobs, title) => {
+    kids.push(heading(title));
+    jobs.forEach((j) => {
       kids.push(tabbed(`**${j.org}**`, j.location, { before: 30 }));
       kids.push(tabbed(`__${j.role}__`, j.date));
       j.bullets.forEach((b) => kids.push(bullet(b)));
     });
   };
+  const renderExperience = () => {
+    renderJobs(cfg.experience, cfg.experienceHeading || 'PROFESSIONAL EXPERIENCE');
+    if (cfg.experience2) renderJobs(cfg.experience2, cfg.experience2Heading || 'ADDITIONAL EXPERIENCE');
+  };
   const renderProjects = () => {
-    kids.push(heading('PROJECT EXPERIENCE'));
+    kids.push(heading(cfg.projectsHeading || 'PROJECT EXPERIENCE'));
     cfg.projects.forEach((p) => {
       kids.push(tabbed(`**${p.title}** | __${p.tech}__`, p.date, { before: 30 }));
       p.bullets.forEach((b) => kids.push(bullet(b)));
@@ -477,7 +600,7 @@ function build(cfg) {
   if (cfg.projectsFirst) { renderProjects(); renderExperience(); }
   else { renderExperience(); renderProjects(); }
 
-  kids.push(heading('TECHNICAL SKILLS'));
+  kids.push(heading(cfg.skillsHeading || 'TECHNICAL SKILLS'));
   cfg.skills.forEach(([label, body]) => kids.push(skill(label, body)));
 
   return new Document({
@@ -509,16 +632,20 @@ function toMarkdown(cfg) {
   cfg.education.forEach((e) => {
     L.push(`**${e.school}** — ${e.location}`, `*${e.degree}* | ${e.date}`, ...(e.courses ? [`- ${e.courses}`] : []), '');
   });
-  const exp = () => {
-    L.push('## PROFESSIONAL EXPERIENCE', '');
-    cfg.experience.forEach((j) => {
+  const jobs = (list, title) => {
+    L.push('## ' + title, '');
+    list.forEach((j) => {
       L.push(`**${j.org}** — ${j.location}`, `*${j.role}* | ${j.date}`, '');
       j.bullets.forEach((b) => L.push('- ' + b));
       L.push('');
     });
   };
+  const exp = () => {
+    jobs(cfg.experience, cfg.experienceHeading || 'PROFESSIONAL EXPERIENCE');
+    if (cfg.experience2) jobs(cfg.experience2, cfg.experience2Heading || 'ADDITIONAL EXPERIENCE');
+  };
   const proj = () => {
-    L.push('## PROJECT EXPERIENCE', '');
+    L.push('## ' + (cfg.projectsHeading || 'PROJECT EXPERIENCE'), '');
     cfg.projects.forEach((p) => {
       L.push(`**${p.title}** | *${p.tech}*${p.date ? ' | ' + p.date : ''}`, '');
       p.bullets.forEach((b) => L.push('- ' + b));
@@ -526,13 +653,13 @@ function toMarkdown(cfg) {
     });
   };
   if (cfg.projectsFirst) { proj(); exp(); } else { exp(); proj(); }
-  L.push('## TECHNICAL SKILLS', '');
+  L.push('## ' + (cfg.skillsHeading || 'TECHNICAL SKILLS'), '');
   cfg.skills.forEach(([k, v]) => L.push(`**${k}:** ${v}`, ''));
   return L.join('\n');
 }
 
 (async () => {
-  for (const cfg of [ANALYST, SCIENTIST, RISK, MARKET_RESEARCH]) {
+  for (const cfg of [ANALYST, SCIENTIST, RISK, MARKET_RESEARCH, DCM]) {
     const buf = await Packer.toBuffer(build(cfg));
     fs.writeFileSync(`${__dirname}/${cfg.file}`, buf);
     fs.writeFileSync(`${__dirname}/${cfg.file.replace('.docx', '.md')}`, toMarkdown(cfg) + '\n');

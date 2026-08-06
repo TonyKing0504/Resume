@@ -15,6 +15,7 @@ earlier two-page draft.
 | `Tao_Jin_Resume_DataScientist_ATS.pdf` / `.docx` | Data Scientist · Applied Scientist · ML / Decision Scientist |
 | `Tao_Jin_Resume_RiskAnalyst.pdf` / `.docx` | Risk Analyst · Exposure Management · Insurance / Reinsurance analytics |
 | `Tao_Jin_Resume_MarketResearch.pdf` / `.docx` | Market Research Associate / Analyst · asset management & financial services |
+| `Tao_Jin_Resume_DebtCapitalMarkets.pdf` / `.docx` | Analyst · Debt Capital Markets / investment banking / capital markets |
 | `*.md` | Plain-text mirror of each version |
 | `JD_KEYWORD_RESEARCH.md` | Keyword bank, frequency tiers, gap list, per-application workflow |
 | `build_resumes.cjs` | Generates both `.docx` and both `.md` from one data source |
@@ -52,6 +53,7 @@ work is the stronger signal for that role.
 | SQL, dashboards, KPIs, reporting, experimentation | **Data Analyst** |
 | Risk, exposure, ERM, insurance / reinsurance | **Risk Analyst** |
 | Market/competitive research, survey work, investor or advisor insights | **Market Research** |
+| Debt capital markets, investment banking, capital markets | **Debt Capital Markets** |
 | Causal inference, A/B testing at scale | **Data Scientist** |
 | Production model development | **Data Scientist** |
 | LLM evals, RAG, agents | **Data Scientist** (Kaggle LLM project is already first) |
@@ -107,6 +109,43 @@ or any survey platform, focus-group moderation. Those are the real gaps for this
 
 **Hard gate:** Fidelity Canada postings state that current work authorization for Canada is required.
 Confirm status before applying.
+
+## The Debt Capital Markets version
+
+Built for TD Securities *Analyst — Canadian Debt Capital Markets (FIG)*, Toronto (R_1503991). As
+with Fidelity, the posting itself is unreachable behind the network policy, so this is built from the
+US sibling, *Analyst, FIG Debt Capital Markets (DCM), TD Securities*. Re-check before sending.
+
+**None of the other four versions could carry this JD.** Measured against a 53-term DCM keyword set:
+
+| Version | Total | DCM core terms |
+|---|---|---|
+| Data Analyst / Data Scientist | 24% | 2/16 |
+| Risk Analyst | 33% | 1/16 |
+| Market Research | 39% | 3/16 |
+| **Debt Capital Markets** | **66%** | **7/16** |
+
+This one reads as a finance resume, not a data resume:
+
+- **Experience is grouped by relevance, not date.** `CAPITAL MARKETS & FINANCE EXPERIENCE` holds Grow
+  and Sinolink; `ADDITIONAL EXPERIENCE` holds Aifuku. Every date is still shown.
+- **Aifuku is reframed around reconciliation** — bank and credit-card statements against the general
+  ledger — because the posting asks for accounting familiarity and that is what the work was.
+- **Sinolink recovers the accounting detail** dropped from the other versions: cash flow statements
+  and balance sheets, from the original resume.
+- **Grow leads with the convertible bond analysis.** Convertible bonds are a debt capital markets
+  product; this is the single most on-point item in the whole history.
+- Projects shrink to two one-line quantitative entries.
+
+Not claimed: bond origination, syndication, private placement, liability management, capital
+structure advisory, new issues, spreads or yields, league tables, credit ratings analysis, Bloomberg,
+financial modeling or comparables, Series 7/79/SIE/63, CSC. That is why DCM core sits at 7/16 rather
+than higher — the missing nine are the genuine experience gap, not a keyword oversight.
+
+**Fit warning.** This is the weakest match of the four targeted versions. The posting asks for 2+
+years in the financial industry; the record is roughly ten months of internships. TD fills these
+seats mostly from its own summer analyst program or from another bank's IB floor. Apply, but treat it
+as a reach, and confirm Canadian work authorization first.
 
 ## How the keywords are distributed
 
