@@ -226,6 +226,7 @@ const SCIENTIST = {
 
 const RISK = {
   file: 'Tao_Jin_Resume_RiskAnalyst.docx',
+  dir: 'tailored/Everest_RiskAnalyst',
   targetRole: 'Risk Analyst / Exposure Management / Insurance & Reinsurance Analytics',
   contact: ['Ithaca, NY — open to Warren, NJ or Toronto, ON | 551-405-1324 | jtonyking@hotmail.com',
     'linkedin.com/in/tao-tony-jin-ab771426a | github.com/TonyKing0504'],
@@ -336,6 +337,7 @@ const RISK = {
 
 const MARKET_RESEARCH = {
   file: 'Tao_Jin_Resume_MarketResearch.docx',
+  dir: 'tailored/Fidelity_MarketResearch',
   targetRole: 'Market Research Associate / Analyst — asset management & financial services',
   contact: ['Ithaca, NY — open to Toronto, ON (hybrid) | 551-405-1324 | jtonyking@hotmail.com',
     'linkedin.com/in/tao-tony-jin-ab771426a | github.com/TonyKing0504'],
@@ -456,6 +458,7 @@ const MARKET_RESEARCH = {
 
 const DCM = {
   file: 'Tao_Jin_Resume_DebtCapitalMarkets.docx',
+  dir: 'tailored/TD_DebtCapitalMarkets',
   targetRole: 'Analyst — Debt Capital Markets / Investment Banking / Capital Markets',
   contact: ['Ithaca, NY — open to Toronto, ON | 551-405-1324 | jtonyking@hotmail.com',
     'linkedin.com/in/tao-tony-jin-ab771426a | github.com/TonyKing0504'],
@@ -573,6 +576,7 @@ const DCM = {
 
 const ENERGY = {
   file: 'Tao_Jin_Resume_EnergyMarkets.docx',
+  dir: 'tailored/Edgecom_EnergyMarketAssociate',
   targetRole: 'Energy Market Associate / demand response & operations analytics',
   contact: ['Ithaca, NY — open to Toronto, ON (hybrid) | 551-405-1324 | jtonyking@hotmail.com',
     'linkedin.com/in/tao-tony-jin-ab771426a | github.com/TonyKing0504'],
@@ -769,8 +773,10 @@ function toMarkdown(cfg) {
 (async () => {
   for (const cfg of [ANALYST, SCIENTIST, RISK, MARKET_RESEARCH, DCM, ENERGY]) {
     const buf = await Packer.toBuffer(build(cfg));
-    fs.writeFileSync(`${__dirname}/${cfg.file}`, buf);
-    fs.writeFileSync(`${__dirname}/${cfg.file.replace('.docx', '.md')}`, toMarkdown(cfg) + '\n');
-    console.log('wrote', cfg.file);
+    const outDir = cfg.dir ? `${__dirname}/${cfg.dir}` : __dirname;
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(`${outDir}/${cfg.file}`, buf);
+    fs.writeFileSync(`${outDir}/${cfg.file.replace('.docx', '.md')}`, toMarkdown(cfg) + '\n');
+    console.log('wrote', (cfg.dir ? cfg.dir + '/' : '') + cfg.file);
   }
 })();

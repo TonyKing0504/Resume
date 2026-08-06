@@ -1,28 +1,27 @@
-# ATS-Optimized One-Page Resumes — 2026 North America Data Analyst / Data Scientist
+# ATS-Optimized One-Page Resumes — Tao (Tony) Jin
 
-Two one-page, keyword-maximized resume versions built against 2026 North America job-description
-research, formatted to match `public/Cornell_Tao_Jin.docx`.
+Six one-page resume versions plus a cover letter, all built from one data source and formatted to
+match `public/Cornell_Tao_Jin.docx`. Two are general-purpose; four are tailored to a specific posting.
 
-Both score **104–105 / 109 (95–96%)** on the keyword bank in
-[`JD_KEYWORD_RESEARCH.md`](./JD_KEYWORD_RESEARCH.md) at ~650 words — up from 89% density on the
-earlier two-page draft.
+## Layout
 
-## Files
+```
+resume/
+├── Tao_Jin_Resume_DataAnalyst_ATS.{pdf,docx,md}     general — send when no posting-specific version fits
+├── Tao_Jin_Resume_DataScientist_ATS.{pdf,docx,md}   general
+├── build_resumes.cjs         one data source for all six resumes
+├── build_cover_letter.cjs    cover letters, same house style
+├── audit_keywords.py         scores a PDF against the keyword bank
+├── JD_KEYWORD_RESEARCH.md    keyword bank, frequency tiers, gap list, workflow
+└── tailored/                 one folder per application — grab the folder, apply
+    ├── Everest_RiskAnalyst/                Risk Analyst I, Exposure Management
+    ├── Fidelity_MarketResearch/            Market Research Associate (Toronto)
+    ├── TD_DebtCapitalMarkets/              Analyst, Canadian DCM (FIG)
+    └── Edgecom_EnergyMarketAssociate/      Energy Market Associate + cover letter
+```
 
-| File | Use |
-|---|---|
-| `Tao_Jin_Resume_DataAnalyst_ATS.pdf` / `.docx` | Data Analyst · Business Analyst · BI Analyst · Product Analyst |
-| `Tao_Jin_Resume_DataScientist_ATS.pdf` / `.docx` | Data Scientist · Applied Scientist · ML / Decision Scientist |
-| `Tao_Jin_Resume_RiskAnalyst.pdf` / `.docx` | Risk Analyst · Exposure Management · Insurance / Reinsurance analytics |
-| `Tao_Jin_Resume_MarketResearch.pdf` / `.docx` | Market Research Associate / Analyst · asset management & financial services |
-| `Tao_Jin_Resume_DebtCapitalMarkets.pdf` / `.docx` | Analyst · Debt Capital Markets / investment banking / capital markets |
-| `Tao_Jin_Resume_EnergyMarkets.pdf` / `.docx` | Energy Market Associate · demand response & operations analytics |
-| `Cover_Letter_Edgecom_EnergyMarketAssociate.pdf` / `.docx` / `.md` | Cover letter for the Edgecom posting |
-| `build_cover_letter.cjs` | Generates cover letters in the same Cambria house style |
-| `*.md` | Plain-text mirror of each version |
-| `JD_KEYWORD_RESEARCH.md` | Keyword bank, frequency tiers, gap list, per-application workflow |
-| `build_resumes.cjs` | Generates both `.docx` and both `.md` from one data source |
-| `audit_keywords.py` | Scores a PDF against the keyword bank |
+Each `tailored/` folder holds everything that application needs. Edgecom is the only one with a
+cover letter, because its posting requires one.
 
 **Submit the PDF by default; use the DOCX only when a posting explicitly asks for Word.**
 
@@ -267,19 +266,28 @@ any formal leadership or mentoring record.
 
 ## Rebuilding
 
-`build_resumes.cjs` is the single source of truth for both versions. It is `.cjs` because the repo's
+`build_resumes.cjs` is the single source of truth for all six versions. It is `.cjs` because the repo's
 `package.json` sets `"type": "module"`.
 
 ```bash
 npm install docx
-node build_resumes.cjs                    # writes both .docx and both .md
-soffice --headless --convert-to pdf --outdir . *.docx
-python3 audit_keywords.py *.pdf
+node build_resumes.cjs        # all six resumes, each to its own folder
+node build_cover_letter.cjs   # cover letters
+
+# PDFs — the general pair at the root, then each application folder
+soffice --headless --convert-to pdf --outdir . Tao_Jin_Resume_Data*.docx
+for d in tailored/*/; do (cd "$d" && soffice --headless --convert-to pdf --outdir . *.docx); done
+
+python3 audit_keywords.py *.pdf tailored/*/*.pdf
 ```
+
+Each variant carries a `dir` field naming its output folder; variants without one write to the root.
+To add an application, copy an existing variant block, give it a new `file` and `dir`, and add it to
+the list at the bottom of the script.
 
 `RESUME_LINE` overrides the leading (240 = single spacing; default 200). Raise it if you cut content
 and want more air; lower it if an edit pushes the page over. Always re-check the page count after
-editing — both versions currently fill the page with no slack.
+editing — every version currently fills its page with no slack.
 
 Note: `audit_keywords.py` reads PDFs, where a hyphenated term can wrap across a line break and read
 as two tokens. If a keyword shows as missing there, check the `.docx` text before assuming it is

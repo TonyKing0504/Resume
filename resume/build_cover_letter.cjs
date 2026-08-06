@@ -32,6 +32,7 @@ const para = (text, opts = {}) => new Paragraph({
 
 const LETTERS = [{
   file: 'Cover_Letter_Edgecom_EnergyMarketAssociate.docx',
+  dir: 'tailored/Edgecom_EnergyMarketAssociate',
   contact: ['Ithaca, NY — open to Toronto, ON (hybrid) | 551-405-1324 | jtonyking@hotmail.com',
     'linkedin.com/in/tao-tony-jin-ab771426a'],
   date: 'August 6, 2026',
@@ -116,7 +117,9 @@ function build(L) {
 
 (async () => {
   for (const L of LETTERS) {
-    fs.writeFileSync(`${__dirname}/${L.file}`, await Packer.toBuffer(build(L)));
-    console.log('wrote', L.file);
+    const outDir = L.dir ? `${__dirname}/${L.dir}` : __dirname;
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(`${outDir}/${L.file}`, await Packer.toBuffer(build(L)));
+    console.log('wrote', (L.dir ? L.dir + '/' : '') + L.file);
   }
 })();
