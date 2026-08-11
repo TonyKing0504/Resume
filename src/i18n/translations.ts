@@ -117,7 +117,7 @@ export const translations: Record<Language, TranslationContent> = {
     },
     hero: {
       name: 'Tao (Tony) Jin',
-      eyebrow: 'Cornell M.Eng Systems Engineering · Graduating May 2026 · Data Science / Data Analytics',
+      eyebrow: 'Cornell M.Eng Systems Engineering · Class of 2026 · Data Science / Data Analytics',
       description:
         'I turn raw data into decisions that land on the executive agenda — auditable SQL pipelines, calibrated machine-learning models, and research that institutional clients actually act on.',
       chips: ["Cornell M.Eng '26", 'UBC Mathematics', 'Available immediately'],
@@ -133,31 +133,31 @@ export const translations: Record<Language, TranslationContent> = {
       headlineEmphasis: 'someone who ships decisions.',
       paragraph1: {
         prefix:
-          'The work has already run in production: Python tooling that automated cross-database entry for an institutional sales desk, convertible-bond macro research that helped clients cut selloff pressure by ',
-        strong1: '9%',
+          'The work has already run in production: PostgreSQL validation queries keeping Metabase reporting accurate on a 9-table production database, a Mage ETL workflow that parsed statement PDFs into structured JSON for ledger reconciliation, and pre-IPO due diligence that cross-checked ',
+        strong1: '20,000+',
         middle:
-          ', and technical marketing for a new bond launch that lifted client conversion by ',
-        strong2: '12%',
+          ' bank transaction records against company ledgers to flag ',
+        strong2: 'dozens',
         suffix:
-          ". My edge is the last mile — turning a model's output into the single sentence an executive can decide on in 30 seconds.",
+          ' of large unexplained transactions. My edge is the last mile — turning an analysis into the single sentence a decision-maker can act on in 30 seconds.',
       },
       paragraph2:
-        'Graduating May 2026 from Cornell Systems Engineering. Actively interviewing for Data Science, Data Analyst, and Business Analyst roles across the U.S., in Vancouver and Toronto, and in mainland China (Beijing, Shanghai, Guangzhou, Hangzhou).',
+        'Cornell M.Eng in Systems Engineering (2026), UBC Mathematics. Actively interviewing for Data Science, Data Analyst, and Business Analyst roles across the U.S., in Vancouver and Toronto, and in mainland China (Beijing, Shanghai, Guangzhou, Hangzhou).',
       cards: [
         {
           title: 'Shipped, not just coded',
           description:
-            'Python and SQL pipelines that passed security review and survived Monday-morning use on a real sales desk — not demos that die in a notebook.',
+            'SQL validation queries on a 9-table production database and a Mage ETL pipeline that reconciled statement PDFs into structured JSON — work that ran in operations, not demos that die in a notebook.',
         },
         {
           title: 'Bilingual, bicultural',
           description:
-            'Native Mandarin, professional English. Four summers split between Shanghai desks and Cornell labs — fluent in both the U.S. and China review styles.',
+            'Native Mandarin, fluent English. Internships in Toronto and Shanghai across tech, asset management, and investment banking — fluent in both North American and Chinese review styles.',
         },
         {
           title: 'Systems, not silos',
           description:
-            "M.Eng training in optimization and stochastic modeling. I surface the question that should have been asked — not just the one that was.",
+            "M.Eng training in optimization and statistical modeling. I surface the question that should have been asked — not just the one that was.",
         },
       ],
     },
@@ -249,9 +249,9 @@ export const translations: Record<Language, TranslationContent> = {
           location: 'Toronto, ON',
           period: 'Jan 2025 – May 2025',
           achievements: [
-            'Wrote PostgreSQL queries with the operations team on a Postgres 15 source-of-truth database spanning 4 operational inputs and 9 core tables, validating orders, receipts, inventory, and ledger data for Metabase reporting.',
-            'Built a 2-block Mage ETL workflow to fetch the latest bank or credit-card PDF from Google Drive, parse transaction fields with Gemini, and output structured JSON for ledger reconciliation.',
-            'Analyzed 5 linked operational entities — receipts, line items, inventory movements, production batches, and customer orders — collaborating cross-functionally to surface data-quality and schema issues for reporting workflows.',
+            'Kept Metabase operational reporting accurate by writing complex PostgreSQL validation queries across a 9-table production database, collaborating with the operations team to identify data anomalies and resolve data-quality issues.',
+            'Automated ledger reconciliation by building a Mage ETL workflow that parsed bank and credit-card statement PDFs into structured JSON with an LLM (Gemini), reducing manual data entry and processing errors.',
+            'Improved data reliability for reporting by performing root cause analysis across 5 linked operational entities, documenting schema and data-quality issues, and communicating fixes cross-functionally.',
           ],
         },
         {
@@ -261,9 +261,8 @@ export const translations: Record<Language, TranslationContent> = {
           location: 'Shanghai, China',
           period: 'May 2024 – Aug 2024',
           achievements: [
-            'Supported institutional clients’ due diligence on the firm by completing due diligence questionnaires (DDQs), cross-checking internal records to keep responses accurate and consistent.',
+            'Completed 10+ institutional due diligence questionnaires (DDQs) of 30–50 questions each by writing clear, concise responses and cross-checking internal records, keeping client-facing documentation accurate and consistent.',
             'Conducted quantitative market research integrating macroeconomic indicators, interest rate trends, and sentiment data; collaborated with senior analysts to deliver analytical reports supporting institutional investment decisions.',
-            'Produced convertible bond downturn analysis and product training materials; contributed to 9% fewer redemptions, 4% more inquiries, and 12% higher conversion rates.',
           ],
         },
         {
@@ -273,9 +272,8 @@ export const translations: Record<Language, TranslationContent> = {
           location: 'Shanghai, China',
           period: 'June 2023 – Aug 2023',
           achievements: [
-            'Calculated Sharpe, Sortino, Beta, volatility, and correlation metrics; visualized trends against benchmarks in risk management reports supporting internal decisions.',
-            'Performed pre-IPO financial due diligence on a Shanghai main-board applicant (planned fundraising ~RMB 460M), cross-checking a dozen executives’ 3-year bank statements against company ledgers to flag large unexplained transactions.',
-            'Refined data collection, spreadsheet verification, and reporting workflows through close cross-functional collaboration, cutting duplicate entry and improving team operational efficiency by 8%.',
+            'Performed pre-IPO financial due diligence on a Shanghai main-board applicant (planned ~RMB 460M IPO): reviewed 10+ executives’ 3-year bank transaction records (20,000+ entries) against company ledgers, flagging dozens of large unexplained transactions.',
+            'Calculated risk and performance metrics (Sharpe, Sortino, beta, volatility, correlation) and visualized trends against benchmarks in risk management reports for stakeholders.',
           ],
         },
       ],
@@ -298,15 +296,19 @@ export const translations: Record<Language, TranslationContent> = {
         { subject: 'Communication', A: 90, fullMark: 100 },
       ],
       toolStackList: [
-        { label: 'Data Engineering & Analysis', stack: 'Python, R, SQL', value: 90 },
-        { label: 'Visualization & BI', stack: 'Tableau, Excel, Matplotlib', value: 95 },
+        { label: 'Programming & Data', stack: 'SQL, Python, R', value: 90 },
         {
-          label: 'Mathematical & Systems',
-          stack: 'Stochastic Calculus, Optimization',
+          label: 'Visualization & Reporting',
+          stack: 'Excel, Tableau, Power BI, Metabase',
+          value: 90,
+        },
+        {
+          label: 'Analytics',
+          stack: 'Cohort, Segmentation, Modeling',
           value: 85,
         },
       ],
-      languageList: ['Chinese (Fluent)', 'English (Proficient)', 'Japanese (Basic)'],
+      languageList: ['Mandarin Chinese (Native)', 'English (Fluent)', 'Japanese (Basic)'],
     },
     contact: {
       eyebrow: 'Get in Touch',
@@ -324,15 +326,15 @@ export const translations: Record<Language, TranslationContent> = {
       copyrightSuffix: 'Tao (Tony) Jin. Designed & built from scratch.',
     },
     seo: {
-      title: 'Tao (Tony) Jin | Data Scientist & Data Analyst (Cornell M.Eng, May 2026)',
+      title: 'Tao (Tony) Jin | Data Scientist & Data Analyst (Cornell M.Eng 2026)',
       description:
-        'Data Science / Data Analyst portfolio of Tao (Tony) Jin (金韬) — Cornell M.Eng Systems Engineering, available May 2026. Track record: 9% selloff reduction, 12% conversion lift, Python, SQL & ML delivered to live desks.',
+        'Data Science / Data Analyst portfolio of Tao (Tony) Jin (金韬) — Cornell M.Eng Systems Engineering, available immediately. Production SQL validation, Mage/LLM ETL automation, pre-IPO due diligence, and end-to-end analytics projects.',
       keywords:
-        'Data Science, Data Scientist, Data Analyst, Machine Learning, Business Analyst, Python, SQL, Tableau, Financial Modeling, Cornell M.Eng, UBC Math, May 2026 graduate, United States, Canada, Vancouver, Toronto, Beijing, Shanghai, Guangzhou, Hangzhou',
+        'Data Science, Data Scientist, Data Analyst, Machine Learning, Business Analyst, Python, SQL, PostgreSQL, DuckDB, Tableau, Power BI, Metabase, Excel, ETL, Cornell M.Eng, UBC Math, 2026 graduate, United States, Canada, Vancouver, Toronto, Beijing, Shanghai, Guangzhou, Hangzhou',
       jobTitle: 'Data Scientist & Data Analyst',
       ogTitle: 'Tao (Tony) Jin | From Dashboard to Decision',
       ogDescription:
-        'Cornell M.Eng (May 2026). 9% selloff reduction · 12% conversion lift · Python & SQL shipped to live desks.',
+        'Cornell M.Eng 2026 · UBC Mathematics. Production SQL validation · ETL automation · pre-IPO due diligence · analytics that ships.',
     },
     toggle: {
       ariaLabel: 'Switch language',
@@ -352,7 +354,7 @@ export const translations: Record<Language, TranslationContent> = {
     },
     hero: {
       name: '金韬',
-      eyebrow: '康奈尔大学系统工程硕士 · 2026 年 5 月毕业 · 求职方向:数据科学 / 数据分析',
+      eyebrow: '康奈尔大学系统工程硕士 · 2026 届 · 求职方向:数据科学 / 数据分析',
       description:
         '将业务数据转化为可以落地执行的决策。从可追溯的 SQL 分析流程、经过校准的机器学习模型,到支持机构客户投资判断的研究材料,都已在真实业务与项目中交付落地。',
       chips: ['康奈尔 M.Eng 2026 届', 'UBC 数学 本科', '可立即入职'],
@@ -368,25 +370,25 @@ export const translations: Record<Language, TranslationContent> = {
       headlineEmphasis: '更能驱动决策落地。',
       paragraph1: {
         prefix:
-          '过往实习中交付的成果均已在真实业务场景中得到验证:为机构销售团队搭建的 Python 自动化工具替代了繁琐的跨库手工录入;针对可转债市场下行趋势的研究报告,协助机构客户将抛售压力降低 ',
-        strong1: '9%',
-        middle: ';为新可转债产品撰写的技术营销材料,推动客户转化率提升 ',
-        strong2: '12%',
+          '过往实习中交付的成果均已在真实业务场景中落地:用复杂 PostgreSQL 校验查询维护 9 张核心表生产库的 Metabase 报表准确性;搭建 Mage ETL 流程把对账单 PDF 自动解析为结构化 JSON 实现台账对账;在券商投行部交叉核查十余名高管三年期银行流水共 ',
+        strong1: '2 万余条',
+        middle: '交易记录与公司账目,筛查出 ',
+        strong2: '数十笔',
         suffix:
-          '。相比单纯的模型搭建,我更擅长将分析结论提炼为管理层能够在短时间内把握并据以决策的关键信息。',
+          '大额异常往来。相比单纯的模型搭建,我更擅长将分析结论提炼为管理层能够在短时间内把握并据以决策的关键信息。',
       },
       paragraph2:
-        '2026 年 5 月于康奈尔大学系统工程硕士项目毕业,目前积极寻求数据科学、数据分析与商业分析方向的全职机会。意向工作地覆盖全美、加拿大(温哥华、多伦多)以及中国(北京、上海、广州、杭州),同时也可以考虑远程协作。',
+        '康奈尔大学系统工程硕士(2026 届)、UBC 数学本科,目前积极寻求数据科学、数据分析与商业分析方向的全职机会。意向工作地覆盖全美、加拿大(温哥华、多伦多)以及中国(北京、上海、广州、杭州),同时也可以考虑远程协作。',
       cards: [
         {
           title: '交付即上线',
           description:
-            '所开发的 Python 脚本与 SQL 流程均通过企业内部 IT 审阅,并在一线业务团队长期使用,是经得起日常依赖的实际工具,而非停留在课堂或演示层面的原型。',
+            '在 9 张核心表的生产数据库上编写 SQL 校验查询,并搭建 Mage ETL 流程把对账单 PDF 解析为结构化 JSON——都是在真实运营环境中跑起来的工具,而非停留在课堂或演示层面的原型。',
         },
         {
           title: '中英双语,跨文化协作',
           description:
-            '中文为母语,英文达到专业工作水平。实习经历横跨上海与康奈尔,熟悉中美两地的汇报逻辑与协作节奏,能够在跨境团队之间高效衔接。',
+            '中文为母语,英文达到专业工作水平。实习经历横跨多伦多与上海,覆盖科技公司、资管与券商投行,熟悉北美与国内两地的汇报逻辑与协作节奏,能够在跨境团队之间高效衔接。',
         },
         {
           title: '系统化的思考方式',
@@ -482,9 +484,9 @@ export const translations: Record<Language, TranslationContent> = {
           location: '加拿大多伦多',
           period: '2025 年 1 月 – 2025 年 5 月',
           achievements: [
-            '与运营团队协作编写 PostgreSQL 查询,在覆盖 4 个业务输入、9 张核心表的 Postgres 15 数据底座上校验订单、收据、库存与账目数据,支撑 Metabase 报表。',
-            '搭建 2 模块 Mage ETL 流程,从 Google Drive 拉取最新银行/信用卡 PDF,用 Gemini 解析交易字段并输出结构化 JSON,支持账目对账。',
-            '分析收据、行项目、库存变动、生产批次与客户订单等 5 类关联业务实体,通过跨团队协作定位报表流程中的数据质量与表结构问题。',
+            '通过编写复杂 PostgreSQL 校验查询,维护 9 张核心表生产数据库的 Metabase 运营报表准确性;与运营团队协作定位数据异常、解决数据质量问题。',
+            '搭建 Mage ETL 流程,自动解析银行与信用卡对账单 PDF 为结构化 JSON(调用 Gemini 大模型),实现台账对账自动化,减少人工录入与处理错误。',
+            '对 5 个关联业务实体进行根因分析,梳理表结构与数据质量问题并跨部门沟通推动修复,提升报表数据可靠性。',
           ],
         },
         {
@@ -494,9 +496,8 @@ export const translations: Record<Language, TranslationContent> = {
           location: '中国上海',
           period: '2024 年 5 月 – 2024 年 8 月',
           achievements: [
-            '配合机构客户对公司的尽职调查,负责各类尽调问卷(DDQ)的填写与数据核对,确保答复口径一致。',
-            '整合宏观指标、利率走势与市场情绪数据,输出可转债市场分析和产品培训材料,支持机构客户投资沟通并推动赎回率下降 9%、咨询量提升 4%、转化率提升 12%。',
-            '将研究结论整理为面向销售团队和客户沟通的材料,提升复杂金融产品信息传达效率,并支持资深分析师形成投资观点。',
+            '配合机构客户对公司的尽职调查,完成 10 余份尽调问卷(DDQ,单份约 30–50 题):撰写清晰、简明的书面答复并交叉核对内部记录,确保客户材料口径准确一致。',
+            '整合宏观经济指标、利率走势与市场情绪数据开展量化市场研究,与资深分析师协作输出分析报告,支持机构客户投资决策。',
           ],
         },
         {
@@ -506,9 +507,8 @@ export const translations: Record<Language, TranslationContent> = {
           location: '中国上海',
           period: '2023 年 6 月 – 2023 年 8 月',
           achievements: [
-            '计算 Sharpe、Sortino、Beta、波动率与相关性指标,形成组合绩效与风险管理报告,支持内部决策。',
-            '对拟募资约 4.6 亿元的沪主板申报企业开展财务尽职调查,交叉核查十余名高管三年期银行流水与公司账目,筛查大额异常往来并形成待落实清单。',
-            '优化数据采集、表格核验和报告汇总流程,减少重复录入与交叉核对成本,推动团队作业效率提升 8%。',
+            '对拟募资约 4.6 亿元的沪主板申报企业开展财务尽职调查,交叉核查十余名高管三年期银行流水(2 万余条交易)与公司账目,筛查出数十笔大额异常往来并形成待落实清单。',
+            '计算 Sharpe、Sortino、Beta、波动率与相关性指标,形成组合绩效和风险管理报告,支持内部决策。',
           ],
         },
       ],
@@ -531,9 +531,9 @@ export const translations: Record<Language, TranslationContent> = {
         { subject: '沟通表达', A: 90, fullMark: 100 },
       ],
       toolStackList: [
-        { label: '数据工程与分析', stack: 'Python, R, SQL', value: 90 },
-        { label: '可视化与 BI', stack: 'Tableau, Excel, Matplotlib', value: 95 },
-        { label: '数学与系统建模', stack: '随机分析、最优化', value: 85 },
+        { label: '编程与数据', stack: 'SQL, Python, R', value: 90 },
+        { label: '可视化与报表', stack: 'Excel, Tableau, Power BI, Metabase', value: 90 },
+        { label: '分析方法', stack: '留存 cohort、客户分层、建模', value: 85 },
       ],
       languageList: ['中文(母语)', '英文(专业工作水平)', '日语(基础)'],
     },
@@ -553,15 +553,15 @@ export const translations: Record<Language, TranslationContent> = {
       copyrightSuffix: 'Tao (Tony) Jin 版权所有。全站从零设计与构建。',
     },
     seo: {
-      title: '金韬 (Tao Jin) | 数据科学 / 数据分析 · 康奈尔 M.Eng · 2026 年 5 月可入职',
+      title: '金韬 (Tao Jin) | 数据科学 / 数据分析 · 康奈尔 M.Eng · 可立即入职',
       description:
-        '金韬 (Tao Jin) 的个人作品集:康奈尔大学系统工程硕士,2026 年 5 月毕业,求职方向数据科学 / 数据分析。核心成果包括协助机构客户降低抛售压力 9%、推动客户转化率提升 12%,所开发的 Python、SQL 与机器学习工具已在企业业务一线落地使用。',
+        '金韬 (Tao Jin) 的个人作品集:康奈尔大学系统工程硕士(2026 届)、UBC 数学本科,求职方向数据科学 / 数据分析。实操经验涵盖生产库 SQL 校验、Mage/大模型 ETL 自动化、Pre-IPO 财务尽调,以及端到端的数据分析项目。',
       keywords:
-        '数据科学, 数据科学家, 数据分析, 机器学习, 商业分析, Python, SQL, Tableau, 财务建模, 康奈尔 M.Eng, UBC 数学, 2026 应届, 全美, 加拿大, 温哥华, 多伦多, 北京, 上海, 广州, 杭州',
+        '数据科学, 数据科学家, 数据分析, 机器学习, 商业分析, Python, SQL, PostgreSQL, DuckDB, Tableau, Power BI, Metabase, Excel, ETL, 康奈尔 M.Eng, UBC 数学, 2026 应届, 全美, 加拿大, 温哥华, 多伦多, 北京, 上海, 广州, 杭州',
       jobTitle: '数据科学家与数据分析师',
       ogTitle: 'Tao (Tony) Jin | 让数据真正驱动决策',
       ogDescription:
-        '康奈尔大学系统工程硕士(2026 年 5 月)。机构客户抛售压力降低 9% · 产品客户转化率提升 12% · Python 与 SQL 工具已在业务一线落地。',
+        '康奈尔大学系统工程硕士(2026 届)· UBC 数学本科。生产库 SQL 校验 · ETL 自动化 · Pre-IPO 财务尽调 · 能落地的数据分析。',
     },
     toggle: {
       ariaLabel: '切换语言',
