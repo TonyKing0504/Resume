@@ -202,6 +202,14 @@ body {
 .proj-detail > .proj-detail-inner {
   overflow: hidden;
   min-height: 0;
+  /* Keep collapsed detail out of the tab order (it holds focusable links).
+     Hiding is delayed until the collapse animation finishes. */
+  visibility: hidden;
+  transition: visibility 0s linear 420ms;
+}
+.proj-detail.open > .proj-detail-inner {
+  visibility: visible;
+  transition: visibility 0s linear 0s;
 }
 
 /* Scroll reveal (Phase 1; migrates to GSAP in Phase 2) */
@@ -332,6 +340,9 @@ body {
   }
   .proj-detail {
     grid-template-rows: 1fr !important;
+  }
+  .proj-detail > .proj-detail-inner {
+    visibility: visible !important;
   }
 }
 

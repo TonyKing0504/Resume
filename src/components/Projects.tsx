@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 import clsx from 'clsx';
 import { useInView } from '../hooks/useInView';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -103,12 +103,24 @@ const Projects: React.FC = () => {
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-5 flex flex-wrap gap-2">
+                      <div className="mt-5 flex flex-wrap items-center gap-2">
                         {project.tech.map((techItem) => (
                           <span key={techItem} className="chip">
                             {techItem}
                           </span>
                         ))}
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="chip text-accent border-accent/40 hover:text-accent-hover hover:border-accent transition-colors"
+                          >
+                            <ExternalLink size={12} strokeWidth={2} aria-hidden="true" />
+                            {t.projects.visitLabel}
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>

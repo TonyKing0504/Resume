@@ -55,6 +55,7 @@ export interface TranslationContent {
     headlineEmphasis: string;
     headlineSuffix: string;
     description: string;
+    visitLabel: string;
     list: Project[];
   };
   experience: {
@@ -169,6 +170,7 @@ export const translations: Record<Language, TranslationContent> = {
       headlineSuffix: '.',
       description:
         'Marketplace analytics, machine learning, relational database design, time-series modeling, and NLP extraction — each with a business translation I can give in 30 seconds.',
+      visitLabel: 'Visit site',
       list: [
         {
           id: 'olist-marketplace',
@@ -233,6 +235,36 @@ export const translations: Record<Language, TranslationContent> = {
             'Optimized AIC parameters for high-accuracy forecasting',
             'Visualized 95% prediction intervals for stakeholders',
           ],
+        },
+        {
+          id: 'bouldering-app',
+          title: 'Bouldering Video Analysis — iOS App',
+          role: 'Solo Developer · Swift, Vision, on-device CV',
+          period: 'Mar 2026 – Jul 2026',
+          tech: ['Swift', 'SwiftUI', 'Apple Vision', 'SwiftData', 'Swift Package', 'LLM API'],
+          description:
+            'A native iOS MVP that turns a single climbing attempt video into specific, plain-language coaching notes. The whole analysis pipeline runs offline on the phone: frame sampling, Apple Vision 2D body-pose extraction, smoothing and pose-quality checks, movement segmentation, feature extraction, then a rule engine that renders feedback in Chinese.',
+          metrics: [
+            'Roughly 20,700 lines of Swift across 181 files, with the analysis and training logic isolated in a BoulderingKit Swift package (5 domain modules) covered by 191 unit tests.',
+            'Local-first by design — SwiftData plus on-device files and Keychain, no account and no cloud sync; optional LLM-enhanced feedback sits behind a provider abstraction and an explicit consent gate.',
+            'Ships attempt history, side-by-side comparison, a route-beta planner with manual hold annotation, and a training stats dashboard.',
+          ],
+        },
+        {
+          id: 'photo-site',
+          title: 'DUNDUN — Photography Site',
+          role: 'Solo Developer · Astro, Cloudflare edge',
+          period: '2026',
+          tech: ['Astro', 'TypeScript', 'Cloudflare Pages', 'Cloudflare R2', 'sharp', 'Edge Functions'],
+          description:
+            'A live photography site built on a static Astro front end with Cloudflare R2 object storage and Pages Functions at the edge. Public albums stream straight from CDN; private albums are password-gated and served through short-lived signed URLs, so unlisted work is never publicly addressable.',
+          metrics: [
+            'Live at dundun-photo.com, serving 130+ photos across four albums for roughly $2–5 a month in storage and egress.',
+            'A sharp-based sync pipeline generates thumbnails and 2560px display renditions, reads EXIF, and uploads to R2 — cutting one 33 MB frame to 716 KB and keeping full-resolution originals off the public site.',
+            'Private-album auth runs at the edge: password → HMAC session cookie → short-lived presigned R2 URL, verified end to end with an 8-case request suite.',
+            'Custom scatter gallery with an infinite wrap-around canvas, plus per-album maps that plot where each photo was taken across Iceland, Japan, and Canada.',
+          ],
+          link: 'https://dundun-photo.com',
         },
       ],
     },
@@ -405,6 +437,7 @@ export const translations: Record<Language, TranslationContent> = {
       headlineSuffix: '。',
       description:
         '涵盖 marketplace 经营分析、机器学习、关系型数据库设计、时间序列建模以及 NLP 信息抽取等方向。每个项目均以清晰的业务背景为起点,并以可量化的成果为落点。',
+      visitLabel: '访问网站',
       list: [
         {
           id: 'olist-marketplace',
@@ -468,6 +501,36 @@ export const translations: Record<Language, TranslationContent> = {
             '通过优化 AIC 参数提升模型的预测精度。',
             '以可视化方式呈现 95% 置信区间的预测结果,便于相关方理解与沟通。',
           ],
+        },
+        {
+          id: 'bouldering-app',
+          title: '抱石动作视频分析 — iOS App',
+          role: '独立开发 · Swift、Vision、端侧计算机视觉',
+          period: '2026 年 3 月 – 2026 年 7 月',
+          tech: ['Swift', 'SwiftUI', 'Apple Vision', 'SwiftData', 'Swift Package', 'LLM API'],
+          description:
+            '原生 iOS MVP:上传一段攀爬视频,输出具体、可读的中文动作改进建议。整条分析链路完全在手机本地离线运行——抽帧、Apple Vision 2D 人体姿态提取、平滑与姿态质量评估、动作分段、特征工程,最后由规则引擎生成中文反馈。',
+          metrics: [
+            '约 2.07 万行 Swift、181 个文件;分析与训练逻辑抽离为独立的 BoulderingKit Swift Package(5 个领域模块),由 191 个单元测试覆盖。',
+            '本地优先设计:SwiftData + 本地文件 + Keychain,无账号、无云同步;可选的大模型增强反馈置于 provider 抽象层与显式授权开关之后。',
+            '已实现尝试历史、双视频对比、含手动标点的路线 beta 规划,以及训练统计面板。',
+          ],
+        },
+        {
+          id: 'photo-site',
+          title: 'DUNDUN — 摄影作品站',
+          role: '独立开发 · Astro、Cloudflare 边缘',
+          period: '2026 年',
+          tech: ['Astro', 'TypeScript', 'Cloudflare Pages', 'Cloudflare R2', 'sharp', 'Edge Functions'],
+          description:
+            '已上线的摄影作品站:Astro 静态前端 + Cloudflare R2 对象存储 + 边缘 Pages Functions。公开相册直连 CDN;私密相册经口令鉴权后以短时效签名 URL 分发,未公开的作品在公网上无法被直接寻址。',
+          metrics: [
+            '已上线 dundun-photo.com,四个相册共 130+ 张照片,存储与流量成本每月约 $2–5。',
+            '基于 sharp 的同步管线自动生成缩略图与 2560px 展示图、读取 EXIF 并上传 R2——单张 33MB 原图压至 716KB,全分辨率原图不出现在公网。',
+            '私密相册鉴权在边缘完成:口令 → HMAC 会话 cookie → 短时效 R2 预签名 URL,并以 8 项请求用例端到端验证。',
+            '自研散布画廊(无限环绕画布),并为每册绘制拍摄地地图,标注冰岛、日本、加拿大各张照片的实际拍摄位置。',
+          ],
+          link: 'https://dundun-photo.com',
         },
       ],
     },
