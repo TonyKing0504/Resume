@@ -135,7 +135,7 @@ export const translations: Record<Language, TranslationContent> = {
       paragraph1: {
         prefix:
           'The work has already run in production: PostgreSQL validation queries keeping Metabase reporting accurate on a 9-table production database, a Mage ETL workflow that parsed statement PDFs into structured JSON for ledger reconciliation, and pre-IPO due diligence that cross-checked ',
-        strong1: '20,000+',
+        strong1: '200,000+',
         middle:
           ' bank transaction records against company ledgers to flag ',
         strong2: 'dozens',
@@ -176,7 +176,7 @@ export const translations: Record<Language, TranslationContent> = {
           id: 'olist-marketplace',
           title: 'Olist Marketplace Customer Retention & Fulfillment Analytics',
           role: 'SQL Analytics, BI Dashboard & Business Recommendations',
-          tech: ['DuckDB SQL', 'CTEs', 'Window Functions', 'Excel Dashboard'],
+          tech: ['DuckDB SQL', 'CTEs', 'Window Functions', 'Tableau Dashboard'],
           description:
             'Analyzed Brazilian e-commerce marketplace data to connect customer retention, revenue concentration, fulfillment quality, seller/category risk, and satisfaction into an executive-ready action plan.',
           metrics: [
@@ -305,7 +305,7 @@ export const translations: Record<Language, TranslationContent> = {
           location: 'Shanghai, China',
           period: 'June 2023 – Aug 2023',
           achievements: [
-            'Performed pre-IPO financial due diligence on a Shanghai main-board applicant (planned ~RMB 460M IPO): reviewed 10+ executives’ 3-year bank transaction records (20,000+ entries) against company ledgers, flagging dozens of large unexplained transactions.',
+            'Performed pre-IPO financial due diligence on a Shanghai main-board applicant (planned ~US$64M IPO): reviewed 10+ executives’ 3-year bank transaction records (200,000+ entries) against company ledgers, flagging dozens of large unexplained transactions.',
             'Calculated risk and performance metrics (Sharpe, Sortino, beta, volatility, correlation) and visualized trends against benchmarks in risk management reports for stakeholders.',
           ],
         },
@@ -444,7 +444,7 @@ export const translations: Record<Language, TranslationContent> = {
           id: 'olist-marketplace',
           title: 'Olist 巴西电商 Marketplace 留存与履约分析',
           role: 'SQL 商业分析、BI Dashboard 与业务建议',
-          tech: ['DuckDB SQL', 'CTE', '窗口函数', 'Excel Dashboard'],
+          tech: ['DuckDB SQL', 'CTE', '窗口函数', 'Tableau Dashboard'],
           description:
             '基于巴西电商 marketplace 订单数据,分析客户复购、收入结构、履约质量、卖家/品类风险与用户满意度之间的关系,并整理为面向业务决策的行动建议。',
           metrics: [
@@ -572,7 +572,7 @@ export const translations: Record<Language, TranslationContent> = {
           location: '中国上海',
           period: '2023 年 6 月 – 2023 年 8 月',
           achievements: [
-            '对拟募资约 4.6 亿元的沪主板申报企业开展财务尽职调查,交叉核查十余名高管三年期银行流水(2 万余条交易)与公司账目,筛查出数十笔大额异常往来并形成待落实清单。',
+            '对拟募资约 4.6 亿元的沪主板申报企业开展财务尽职调查,交叉核查十余名高管三年期银行流水(逾 20 万条交易)与公司账目,筛查出数十笔大额异常往来并形成待落实清单。',
             '计算 Sharpe、Sortino、Beta、波动率与相关性指标,形成组合绩效和风险管理报告,支持内部决策。',
           ],
         },
