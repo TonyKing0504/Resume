@@ -289,10 +289,11 @@ export const translations: Record<Language, TranslationContent> = {
         {
           id: 'grow-investment',
           company: 'Grow Investment Group',
-          role: 'Institutional Sales Department Intern',
+          role: 'Data Analyst Intern',
           location: 'Shanghai, China',
           period: 'May 2024 – Aug 2024',
           achievements: [
+            "Developed an internal Python dashboard for the firm's convertible-bond product, turning multi-year daily performance data into KPI metrics, trend, and volatility charts shared by technical and non-technical colleagues.",
             'Completed 10+ institutional due diligence questionnaires (DDQs) of 30–50 questions each by writing clear, concise responses and cross-checking internal records, keeping client-facing documentation accurate and consistent.',
             'Conducted quantitative market research integrating macroeconomic indicators, interest rate trends, and sentiment data; collaborated with senior analysts to deliver analytical reports supporting institutional investment decisions.',
           ],
@@ -538,7 +539,7 @@ export const translations: Record<Language, TranslationContent> = {
       eyebrow: '工作经历',
       headline: '在一线业务中积累的实战经验',
       description:
-        '实习经历分布在多伦多与上海,涵盖数据科学、机构销售与投资银行——SQL 数据流程、ETL 自动化与客户材料,所交付的成果均被团队在日常工作中直接采用。',
+        '实习经历分布在多伦多与上海,涵盖数据科学、数据分析与投资银行——SQL 数据流程、ETL 自动化与数据看板,所交付的成果均被团队在日常工作中直接采用。',
       list: [
         {
           id: 'aifuku',
@@ -555,10 +556,11 @@ export const translations: Record<Language, TranslationContent> = {
         {
           id: 'grow-investment',
           company: 'GROW 思睿',
-          role: '机构销售部实习生',
+          role: '数据分析实习生',
           location: '中国上海',
           period: '2024 年 5 月 – 2024 年 8 月',
           achievements: [
+            '为公司可转债产品搭建内部 Python 数据看板:将多年逐日业绩数据整合为 KPI 指标、趋势与波动率图表,供技术与非技术同事共用同一口径,替代临时翻数据的沟通方式。',
             '配合机构客户对公司的尽职调查,完成 10 余份尽调问卷(DDQ,单份约 30–50 题):撰写清晰、简明的书面答复并交叉核对内部记录,确保客户材料口径准确一致。',
             '整合宏观经济指标、利率走势与市场情绪数据开展量化市场研究,与资深分析师协作输出分析报告,支持机构客户投资决策。',
           ],
