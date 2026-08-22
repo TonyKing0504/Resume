@@ -301,7 +301,7 @@ export const translations: Record<Language, TranslationContent> = {
         {
           id: 'sinolink',
           company: 'Sinolink Securities Co., Ltd.',
-          role: 'Investment Banking Intern',
+          role: 'Data Analyst Intern, Investment Banking',
           location: 'Shanghai, China',
           period: 'June 2023 – Aug 2023',
           achievements: [
@@ -568,7 +568,7 @@ export const translations: Record<Language, TranslationContent> = {
         {
           id: 'sinolink',
           company: '国金证券股份有限公司',
-          role: '投资银行部实习生',
+          role: '数据分析实习生(投资银行部)',
           location: '中国上海',
           period: '2023 年 6 月 – 2023 年 8 月',
           achievements: [
